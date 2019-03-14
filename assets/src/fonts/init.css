@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'GHEAGrapalat';
+    src: url('GHEAGrapalat.ttf') format('truetype');
+    src: url('GHEAGrapalat.eot'); /* IE9 Compat Modes */
+    src: url('GHEAGrapalat.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('GHEAGrapalat.woff2') format('woff2'), /* Super Modern Browsers */
+    url('GHEAGrapalat.woff') format('woff'), /* Pretty Modern Browsers */
+    url('GHEAGrapalat.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('GHEAGrapalat.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'GHEAGrapalat-Bold';
+    src: url('GHEAGrapalat-Bold.ttf') format('truetype');
+    src: url('GHEAGrapalat-Bold.eot'); /* IE9 Compat Modes */
+    src: url('GHEAGrapalat-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('GHEAGrapalat-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+    url('GHEAGrapalat-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+    url('GHEAGrapalat-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('GHEAGrapalat-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'GHEAGrapalat-Italic';
+    src: url('GHEAGrapalat-Italic.ttf') format('truetype');
+    src: url('GHEAGrapalat-Italic.eot'); /* IE9 Compat Modes */
+    src: url('GHEAGrapalat-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('GHEAGrapalat-Italic.woff2') format('woff2'), /* Super Modern Browsers */
+    url('GHEAGrapalat-Italic.woff') format('woff'), /* Pretty Modern Browsers */
+    url('GHEAGrapalat-Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('GHEAGrapalat-Italic.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'GHEAGrapalat-BoldItalic';
+    src: url('GHEAGrapalat-BoldItalic.ttf') format('truetype');
+    src: url('GHEAGrapalat-BoldItalic.eot'); /* IE9 Compat Modes */
+    src: url('GHEAGrapalat-BoldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('GHEAGrapalat-BoldItalic.woff2') format('woff2'), /* Super Modern Browsers */
+    url('GHEAGrapalat-BoldItalic.woff') format('woff'), /* Pretty Modern Browsers */
+    url('GHEAGrapalat-BoldItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('GHEAGrapalat-BoldItalic.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight: normal;
+}
+
