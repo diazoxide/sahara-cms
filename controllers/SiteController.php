@@ -103,7 +103,7 @@ class SiteController extends Controller
     }
 
 //    https://new.irakanum.am/site/localize-images?n=0&l=100
-/*    public function actionLocalizeImages($n, $l)
+    public function actionLocalizeImages($n, $l)
     {
         $offset = $n * $l;
         $posts = BlogPost::find()->orderBy(['id' => SORT_DESC])->limit($l)->offset($offset)->all();
@@ -163,6 +163,9 @@ class SiteController extends Controller
         }
     }
 
+    public function actionPath(){
+        echo \Yii::getAlias('@public');
+    }
 
     public function actionDownload($n,$l=10)
     {
@@ -207,7 +210,7 @@ class SiteController extends Controller
                 echo $post->id . "<br>";
             }
         }
-    }*/
+    }
 
     public function actionClearCache()
     {
