@@ -28,6 +28,20 @@ if (YII_ENV_DEV) {
         'class' => 'yii\gii\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
         'allowedIPs' => ["*"],
+        'generators' => [
+            'migrik' => [
+                'class' => \insolita\migrik\gii\StructureGenerator::class,
+                'templates' => [
+                    'custom' => '@app/gii/templates/migrator_schema',
+                ],
+            ],
+            'migrikdata' => [
+                'class' => \insolita\migrik\gii\DataGenerator::class,
+                'templates' => [
+                    'custom' => '@app/gii/templates/migrator_data',
+                ],
+            ],
+        ],
     ];
 
     $config['components']['assetManager']['forceCopy'] = true;

@@ -1,7 +1,12 @@
+<?php
+use yii\helpers\Html;
+?>
 <footer class="footer">
     <div class="container">
-        <div class="col-md-3 nopadding">
-            <?= \yii\bootstrap\Nav::widget([
+        <div class="col-md-3 hidden-xs nopadding">
+            <?=
+
+            \yii\bootstrap\Nav::widget([
                 'encodeLabels' => false,
                 'options' => ['class' => 'navbar-nav navbar-left', 'id' => 'header_top_social','style'=>'font-size:24px'],
                 'items' => [
@@ -25,7 +30,7 @@
             <div class="fb-page" data-href="https://www.facebook.com/irakanum.am" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/irakanum.am" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/irakanum.am">Irakanum.am</a></blockquote></div>
 -->
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 hidden-xs">
             <h4>Բաժիններ</h4>
             <?= diazoxide\blog\widgets\Navigation::widget([
                 'vertical' => true,
@@ -36,12 +41,9 @@
         </div>
         <div class="col-md-3">
             <h4>Կոնտակտային տվյալներ</h4>
-
-            <p>Baghramyan 4/5</p>
-            <p>Phone: +374 (94) 136-670</p>
-            <p>Mobile: +374 (95) 136-670</p>
-            <p>Email: irakanumnews@gmail.com</p>
-            <p>Web: https://irakanum.am</p>
+            <?php foreach(Yii::$app->params['footer_info'] as $inf){
+                echo Html::tag('p',$inf);
+            }?>
         </div>
         <div class="col-md-3">
             <?= \yii\helpers\Html::img(Yii::$app->params['logo_white']) ?>

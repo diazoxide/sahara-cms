@@ -23,18 +23,20 @@ AppAsset::register($this);
 
     <?= $this->render("main-navbar") ?>
 
-    <div id="main-content">
+    <div id="main-content" class="top-buffer-20-md">
 
-        <div class="container">
+        <div class="container nopadding-xs">
 
-            <?= Breadcrumbs::widget([
-                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            ]) ?>
+            <div class="visible-md visible-lg visible-xl">
+                <?= Breadcrumbs::widget([
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                ]) ?>
+            </div>
 
             <?= Alert::widget() ?>
-            <div class="col-sm-6 col-md-push-3"><?= $content ?></div>
-            <div class="col-sm-3 col-md-pull-6"><?= $this->render("main-left-sidebar") ?></div>
-            <div class="col-sm-3 "><?= $this->render("main-right-sidebar") ?></div>
+            <div class="col-md-6 col-md-push-3 top-buffer-20-xs top-buffer-0-md"><?= $content ?></div>
+            <div class="col-md-3 col-md-pull-6 top-buffer-20-xs top-buffer-0-md"><?= $this->render("main-left-sidebar") ?></div>
+            <div class="col-md-3 top-buffer-20-xs top-buffer-0-md"><?= $this->render("main-right-sidebar") ?></div>
 
         </div>
     </div>

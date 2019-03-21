@@ -23,13 +23,15 @@ AppAsset::register($this);
 
     <?= $this->render("main-navbar") ?>
 
-    <div id="main-content">
+    <div id="main-content" class="top-buffer-20-xs">
 
-        <div class="container">
+        <div class="container nopadding-xs">
 
-            <?= Breadcrumbs::widget([
-                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            ]) ?>
+            <div class="visible-md visible-lg visible-xl">
+                <?= Breadcrumbs::widget([
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                ]) ?>
+            </div>
 
             <?= Alert::widget() ?>
 

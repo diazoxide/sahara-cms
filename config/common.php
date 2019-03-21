@@ -9,6 +9,8 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
+        '@public' => '@app/public',
+        '@admin' => '@app/admin',
     ],
     'basePath' => dirname(__DIR__),
     'components' => [
@@ -17,13 +19,12 @@ $config = [
             'translations' => [
                 'yii' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    //'basePath' => '@app/messages',
+                    'basePath' => '@app/messages',
                     'sourceLanguage' => 'en-US',
                     'fileMap' => [
                         'yii' => 'yii.php',
                         //'app/error' => 'error.php',
                     ],
-
                 ],
                 'yii2mod.comments' => [
                     'class' => 'yii\i18n\PhpMessageSource',
@@ -42,7 +43,6 @@ $config = [
         'cache' => [
 //            'class' => 'yii\caching\FileCache',
             'class' => 'yii\caching\ApcCache',
-
         ],
         'user' => [
             'identityClass' => 'app\models\User',
@@ -71,7 +71,7 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'hostInfo' => 'https://new.irakanum.am',
+            //'hostInfo' => '',
             'rules' => [
                 '/category/<slug>' => '/blog/default/archive',
                 '/archive' => '/blog/default/archive',
@@ -80,16 +80,23 @@ $config = [
                     'route' => '/blog/default/view',
                     'suffix' => '/'
                 ],
-                '<year:\d{4}>/<month:\d{2}>/<day:\d{2}>/<slug>' => '/blog/default/view',
+                //Fixing old posts issue
+                '/archives/<id:\d+>' => '/site/old-post',
 
             ],
         ],
         'formatter' => [
-//            'dateFormat' => 'dd MM Y',
-//            'datetimeFormat' => 'php:d F Y H:i:s',
+            'class'           => 'yii\i18n\Formatter',
+            'defaultTimeZone' => 'Asia/Yerevan',
+            'timeZone' => 'Asia/Yerevan',
+
             'decimalSeparator' => '.',
             'thousandSeparator' => ' ',
             'currencyCode' => 'AMD',
+//            'timeZone' => 'Asia/Yerevan',
+            'dateFormat' => 'php:Y-m-d',
+            'datetimeFormat'=>'php:Y-m-d H:i:s'
+
         ],
         'authManager' => [
             'class' => 'dektrium\rbac\components\DbManager',
@@ -132,17 +139,26 @@ $config = [
         ],
         'blog' => [
             'class' => "diazoxide\blog\Module",
-            'urlManager' => 'urlManager',// 'urlManager' by default, or maybe you can use own component urlManagerFrontend
-            'imgFilePath' => __DIR__ . '/../public/uploads/img/blog/',
+            'urlManager' => 'urlManager',
+            'imgFilePath' => dirname(__DIR__) . '/public/uploads/img/blog/',
             'imgFileUrl' => '/uploads/img/blog/',
+            'frontendViewsMap'=>[
+                'blog/default/index'=>'@app/views/blog/index'
+            ],
+            'frontendLayoutMap'=>[
+                'blog/default/view'=>'@app/views/layouts/main-with-two-sidebar',
+                'blog/default/archive'=>'@app/views/layouts/main-with-right-sidebar',
+            ],
+            'homeTitle'=>'Norlur.am',
             'userModel' => "\app\models\User",
-            'userPK' => 'id', //default primary key for {{%user}} table
-            'userName' => 'username', //uses in view (may be field `username` or `email` or `login`)
+            'userPK' => 'id',
+            'userName' => 'username',
             'addthisId' => "ra-5ab0c5361efd854c",
+            'showClicksInPost'=>false,
             'enableShareButtons' => true,
             'blogViewLayout' => '@app/views/layouts/main-with-two-sidebar',
-            'blogPostPageCount' => '20',
-            'schemaOrg' => [ // empty array [] by default!
+            'blogPostPageCount' => '10',
+            'schemaOrg' => [
                 'publisher' => [
                     'logo' => '/img/logo/header.png',
                     'logoWidth' => 200,

@@ -31,11 +31,11 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #930000;
+    background: #2b5aa8;
 }
 
 a {
-    color: #610000;
+    color: #00173c;
 }
 
 a:hover {
@@ -138,7 +138,7 @@ a.desc:after {
 }
 
 .error-summary {
-    color: #a94442;
+    color: #2b5aa8;
     background: #fdf7f7;
     border-left: 3px solid #eed3d7;
     padding: 10px 20px;
@@ -185,13 +185,14 @@ a.desc:after {
 #header_second {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 12px;
-    box-shadow: 0 7px 24px #b7b7b7;
+    font-size: 14px;
+    background: #cccccc;
+    border-bottom:solid 1px #ddd;
 }
 
 #header_top {
     margin: 0;
-    background: #930000;
+    background: #2b5aa8;
 }
 
 #header_top .navbar-right {
@@ -199,7 +200,7 @@ a.desc:after {
 }
 
 #header_top .navbar-left a {
-    color: #d28585;
+    color: #f8f8f8;
 }
 
 #header_top .navbar-right a {
@@ -221,18 +222,21 @@ a.desc:after {
 #header_top .navbar-nav > li a {
     padding: 10px;
 }
-
+.widget_title a{
+    color:#c7a871;
+}
+.widget_title a:hover{
+    color: #87704a;
+}
 .widget_title {
-    background: #930000;
-    color: #fff;
-    padding: 5px 10px;
-    text-align: left;
-    font-size: 18px;
+    background: #444444;
+    color: #ffffff;
+    border-bottom: solid 5px #000000;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
 }
 
-.breadcrumb {
-    margin-top: 25px;
-}
 
 #logo-container {
     padding: 0;
@@ -244,7 +248,7 @@ a.desc:after {
 }
 
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
-    background: #930000;
+    background: #2b5aa8;
     border-color: #fff;
 }
 

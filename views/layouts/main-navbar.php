@@ -51,7 +51,6 @@ NavBar::end();
 ?>
 
 <div class="container hidden-xs" id="logo-container">
-    <div class="row">
         <div class="col-md-3">
             <?= Html::a(Html::img(Yii::$app->params['logo']), "/", ['id' => 'logo']) ?>
         </div>
@@ -66,7 +65,6 @@ NavBar::end();
 
         </div>
 
-    </div>
 </div>
 
 <?= diazoxide\blog\widgets\Navigation::widget([

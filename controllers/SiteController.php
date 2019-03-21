@@ -2,10 +2,12 @@
 
 namespace app\controllers;
 
-use app\modules\blog\models\BlogPost;
+use diazoxide\blog\models\BlogPost;
 use Yii;
+use yii\db\Exception;
 use yii\filters\AccessControl;
 use yii\web\Controller;
+use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
@@ -40,6 +42,17 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    /**
+     * @param $id
+     * @throws NotFoundHttpException
+     */
+    public function actionOldPost($id){
+        $post = BlogPost::findOne($id);
+        if ($post === null) {
+            throw new NotFoundHttpException(Yii::t('yii', 'Page not found.'));
+        }
+        Yii::$app->response->redirect($post->url);
+    }
     /**
      * Login action.
      *
@@ -102,6 +115,10 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+    public function actionTest(){
+        echo Yii::$app->controller->route;
+    }
+
 //    https://new.irakanum.am/site/localize-images?n=0&l=100
     public function actionLocalizeImages($n, $l)
     {
@@ -111,7 +128,7 @@ class SiteController extends Controller
         foreach ($posts as $key => $post) {
             $id = $post->id;
             $content = isset($post->content) ? $post->content : null;
-            echo $key.'--'.$id . "--";
+            //echo $key.'--'.$id . "--";
             if ($content) {
                 $final = preg_replace_callback(
                     '/\<img.*\ src="(.[^"]+)\"/i',
@@ -127,8 +144,8 @@ class SiteController extends Controller
                             return $url;
                         };
 
-                        $localUrl = "/img/blog/upload/1/$name$ext";
-                        $path = \Yii::getAlias('@webroot') . $localUrl;
+                        $localUrl = "/uploads/img/blog/upload/1/$name$ext";
+                        $path = \Yii::getAlias('@public') . $localUrl;
 
                         //echo $path;
 
@@ -136,13 +153,13 @@ class SiteController extends Controller
                             try {
                                 file_put_contents($path, fopen($url, 'r'));
                                 //echo "<img src='$localUrl' width='50' height='50'>";
-                                echo "--Done";
+                                //echo "--Done";
                                 $url = $localUrl;
                             } catch (\Exception $exception) {
-                                echo "--Fail";
+                                //echo "--Fail";
                             }
                         } else {
-                            echo "--Exists";
+                            //echo "--Exists";
                             $url = $localUrl;
                         }
 
@@ -152,20 +169,20 @@ class SiteController extends Controller
                 $post->content = $final;
 
                 if($post->save()){
-                    echo "--Saved";
+                   // echo "--Saved";
                 } else{
-                    echo "--Not Saved";
+                    //echo "--Not Saved";
                 }
 
-                echo "<br>";
+                //echo "<br>";
 
             }
         }
     }
 
-    public function actionPath(){
-        echo \Yii::getAlias('@public');
-    }
+//    public function actionPath(){
+//        echo \Yii::getAlias('@public');
+//    }
 
     public function actionDownload($n,$l=10)
     {
@@ -177,12 +194,11 @@ class SiteController extends Controller
             $url = isset($post['banner']) ? $post['banner'] : null;
             if ($url) {
                 $url = str_replace("https://", "http://", $url);
-                $path = \Yii::getAlias('@webroot') . "/img/blog/blogPost/$id.jpg";
+                $path = \Yii::getAlias('@public') . "/uploads/img/blog/blogPost/$id.jpg";
                 echo $path . '<br>';
                 try {
                     file_put_contents($path, fopen($url, 'r'));
                 } catch (\Exception $exception) {
-
                 }
             }
         }
@@ -193,12 +209,16 @@ class SiteController extends Controller
         $offset = $n * $l;
         $posts = BlogPost::find()->orderBy(['id' => SORT_DESC])->limit($l)->offset($offset)->all();
         foreach ($posts as $key => $post) {
+
             $post->createThumbs();
+
         }
     }
 
-    public function actionExcerpt($n)
+    public function actionExcerpt($n,$l=500)
     {
+        $offset = $n * $l;
+        $posts = BlogPost::find()->orderBy(['id' => SORT_DESC])->limit($l)->offset($offset)->all();
 
         foreach ($posts as $key => $post) {
             $content = strip_tags($post->content);
