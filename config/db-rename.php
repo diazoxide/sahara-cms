@@ -13,6 +13,5 @@ return [
 //
 //    'enableQueryCache'=>!YII_DEBUG,
 //    'queryCacheDuration'=>3600,
-
 ];
 

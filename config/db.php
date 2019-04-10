@@ -10,6 +10,7 @@ return [
     'enableSchemaCache' => true,
     'schemaCacheDuration' => 300,
     'schemaCache' => 'cache',
+
 //
 //    'enableQueryCache'=>!YII_DEBUG,
 //    'queryCacheDuration'=>3600,
