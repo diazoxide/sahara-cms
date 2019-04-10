@@ -7,13 +7,17 @@ use yii\helpers\Html;
 ?>
 
 <?php
+/*
+ *  Header Top Navigation bar
+ * Showing logo for mobile
+ * */
 NavBar::begin([
-    'brandImage' =>  Yii::$app->params['logo_mobile'],
+    'brandImage' => Yii::$app->website->getLogo('xs'),
     'brandOptions' => [
         'class' => 'visible-xs'
     ],
     'innerContainerOptions' => ['class' => 'container nopadding-sm'],
-    'containerOptions' => [ 'class'=>'nopadding-sm'],
+    'containerOptions' => ['class' => 'nopadding-sm'],
 
     'options' => [
         'class' => 'navbar-default',
@@ -21,17 +25,10 @@ NavBar::begin([
     ],
 ]);
 
-echo Nav::widget([
-    'encodeLabels' => false,
-    'options' => ['class' => 'navbar-nav navbar-left hidden-xs', 'id' => 'header_top_social'],
-    'items' => [
-        ['label' => '<i class="fa fa-facebook-official"></i>', 'url' => Yii::$app->params['social']['facebook']],
-        ['label' => '<i class="fa fa-instagram"></i>', 'url' => Yii::$app->params['social']['instagram']],
-        ['label' => '<i class="fa fa-youtube-square"></i>', 'url' => Yii::$app->params['social']['youtube']],
-        ['label' => '<i class="fa fa-twitter-square"></i>', 'url' => Yii::$app->params['social']['twitter']],
-        ['label' => '<i class="fa fa-skype"></i>', 'url' => Yii::$app->params['social']['skype']],
-    ],
-]);
+/*
+ * Header social media navigation
+ * */
+echo Yii::$app->socialmedia->navigation();
 
 echo Nav::widget([
     'encodeLabels' => false,
@@ -51,19 +48,20 @@ NavBar::end();
 ?>
 
 <div class="container hidden-xs" id="logo-container">
-        <div class="col-md-3">
-            <?= Html::a(Html::img(Yii::$app->params['logo']), "/", ['id' => 'logo']) ?>
-        </div>
+    <div class="col-md-3">
+        <?= Html::a(Html::img(Yii::$app->website->getLogo('md')), "/", ['id' => 'logo']) ?>
+    </div>
 
-        <div class="col-md-9 text-right hidden-xs hidden-sm hidden-md">
-            <?php
-            $banners = Yii::$app->params['header_banners'];
-            $banner = $banners[(rand(0, (count($banners) - 1)))];
-            echo Html::a(Html::img($banner['src']), $banner['href']);
-            ?>
-            <?= Yii::$app->params['banners']['currency'] ?>
+    <div class="col-md-9 text-right hidden-xs hidden-sm hidden-md">
 
-        </div>
+        <?php
+        $banners = Yii::$app->params['header_banners'];
+        $banner = $banners[(rand(0, (count($banners) - 1)))];
+        echo Html::a(Html::img($banner['src']), $banner['href']);
+        ?>
+        <?= Yii::$app->params['banners']['currency'] ?>
+
+    </div>
 
 </div>
 

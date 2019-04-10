@@ -20,7 +20,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
-    "php": ">=5.4.0",
+    "php": ">=5.6.0",
     "yiisoft/yii2": "~2.0.14",
     "yiisoft/yii2-bootstrap": "~2.0.0",
     "yiisoft/yii2-swiftmailer": "~2.0.0",
@@ -28,6 +28,7 @@
     "masterexploder/phpthumb" : "dev-master#9a58407dca8748c3a20bc8143db56aff357bdf91",
     "dektrium/yii2-user": "^0.9.14",
     "dektrium/yii2-rbac": "^1.0",
+    "diazoxide/yii2-config": "dev-master",
     "diazoxide/yii2-blog": "dev-master"
   },
   "require-dev": {

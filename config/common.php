@@ -5,15 +5,27 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'language' => 'hy', // Set the language here
 
-    'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
         '@public' => '@app/public',
         '@admin' => '@app/admin',
     ],
+
+    'bootstrap' => [
+        'log'
+    ],
+
     'basePath' => dirname(__DIR__),
+
     'components' => [
+
+        'redis' => [
+            'class' => 'yii\redis\Connection',
+            'hostname' => 'localhost',
+            'port' => 6379,
+            'database' => 0,
+        ],
 
         'i18n' => [
             'translations' => [
@@ -25,153 +37,85 @@ $config = [
                         'yii' => 'yii.php',
                         //'app/error' => 'error.php',
                     ],
-                ],
-                'yii2mod.comments' => [
-                    'class' => 'yii\i18n\PhpMessageSource',
-                    'basePath' => '@yii2mod/comments/messages',
-                ],
+                ]
             ],
+        ],
+        'session'=> [
+            'class' => 'yii\\web\\DbSession',
+            'db' => 'db',
+            'sessionTable' => '{{%session}}',
         ],
 
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'ML30sdxBrUTxtL9y52Jy_2viXiYa-OmR',
         ],
-        'opengraph' => [
-            'class' => 'app\components\OpenGraph',
-        ],
         'cache' => [
 //            'class' => 'yii\caching\FileCache',
             'class' => 'yii\caching\ApcCache',
         ],
+
         'user' => [
-            'identityClass' => 'app\models\User',
+            'identityClass' => app\models\User::class,
             'enableAutoLogin' => true,
         ],
+
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
-            'useFileTransport' => true,
-        ],
+//
+//        'mailer' => [
+//            'class' => 'yii\swiftmailer\Mailer',
+//            // send all mails to a file by default. You have to set
+//            // 'useFileTransport' to false and configure a transport
+//            // for the mailer to send real emails.
+//            'useFileTransport' => true,
+//        ],
+
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
                 [
-                    'class' => 'yii\log\FileTarget',
+                    'class' => yii\log\FileTarget::class,
                     'levels' => ['error', 'warning'],
                 ],
             ],
         ],
         'db' => $db,
+
         'urlManager' => [
+            "class" => yii\web\UrlManager::class,
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            //'hostInfo' => '',
+            'hostInfo' => 'https://norlur.am',
             'rules' => [
-                '/category/<slug>' => '/blog/default/archive',
-                '/archive' => '/blog/default/archive',
-                [
-                    'pattern' => '<year:\d{4}>/<month:\d{2}>/<day:\d{2}>/<slug>',
-                    'route' => '/blog/default/view',
-                    'suffix' => '/'
-                ],
-                //Fixing old posts issue
-                '/archives/<id:\d+>' => '/site/old-post',
-
             ],
         ],
-        'formatter' => [
-            'class'           => 'yii\i18n\Formatter',
-            'defaultTimeZone' => 'Asia/Yerevan',
-            'timeZone' => 'Asia/Yerevan',
 
-            'decimalSeparator' => '.',
-            'thousandSeparator' => ' ',
-            'currencyCode' => 'AMD',
+//        'formatter' => [
+//            'class' => 'yii\i18n\Formatter',
+//            'defaultTimeZone' => 'Asia/Yerevan',
 //            'timeZone' => 'Asia/Yerevan',
-            'dateFormat' => 'php:Y-m-d',
-            'datetimeFormat'=>'php:Y-m-d H:i:s'
+//
+//            'decimalSeparator' => '.',
+//            'thousandSeparator' => ' ',
+//            'currencyCode' => 'AMD',
+////            'timeZone' => 'Asia/Yerevan',
+//            'dateFormat' => 'php:Y-m-d',
+//            'datetimeFormat' => 'php:Y-m-d H:i:s'
+//
+//        ],
 
-        ],
         'authManager' => [
             'class' => 'dektrium\rbac\components\DbManager',
             'defaultRoles' => ['guest'],
         ],
     ],
     'modules' => [
-        'social' => [
-            // the module class
-            'class' => 'kartik\social\Module',
-
-            // the global settings for the disqus widget
-            'disqus' => [
-                'settings' => ['shortname' => 'DISQUS_SHORTNAME'] // default settings
-            ],
-
-            // the global settings for the facebook plugins widget
-            'facebook' => [
-                'appId' => '440598006382886',
-                'app_secret' => '528d7aa278399d3d5719a64b2f137e5e',
-            ],
-
-            // the global settings for the google plugins widget
-            'google' => [
-                'clientId' => 'GOOGLE_API_CLIENT_ID',
-                'pageId' => 'GOOGLE_PLUS_PAGE_ID',
-                'profileId' => 'GOOGLE_PLUS_PROFILE_ID',
-            ],
-
-            // the global settings for the google analytic plugin widget
-            'googleAnalytics' => [
-                'id' => 'UA-114602186-1',
-                'domain' => 'new.irakanum.am',
-            ],
-
-            // the global settings for the twitter plugins widget
-            'twitter' => [
-                'screenName' => 'TWITTER_SCREEN_NAME'
-            ],
+        'config' => [
+            'class' => "diazoxide\yii2config\Module",
         ],
-        'blog' => [
-            'class' => "diazoxide\blog\Module",
-            'urlManager' => 'urlManager',
-            'imgFilePath' => dirname(__DIR__) . '/public/uploads/img/blog/',
-            'imgFileUrl' => '/uploads/img/blog/',
-            'frontendViewsMap'=>[
-                'blog/default/index'=>'@app/views/blog/index'
-            ],
-            'frontendLayoutMap'=>[
-                'blog/default/view'=>'@app/views/layouts/main-with-two-sidebar',
-                'blog/default/archive'=>'@app/views/layouts/main-with-right-sidebar',
-            ],
-            'homeTitle'=>'Norlur.am',
-            'userModel' => "\app\models\User",
-            'userPK' => 'id',
-            'userName' => 'username',
-            'addthisId' => "ra-5ab0c5361efd854c",
-            'showClicksInPost'=>false,
-            'enableShareButtons' => true,
-            'blogViewLayout' => '@app/views/layouts/main-with-two-sidebar',
-            'blogPostPageCount' => '10',
-            'schemaOrg' => [
-                'publisher' => [
-                    'logo' => '/img/logo/header.png',
-                    'logoWidth' => 200,
-                    'logoHeight' => 47,
-                    'name' => "Irakanum.am",
-                    //'phone' => '+1 800 488 80 85',
-                    'address' => 'Baghramyan 4/5'
-                ]
-            ]
-        ],
-
         'rbac' => 'dektrium\rbac\RbacWebModule',
-
         'user' => [
             'class' => 'dektrium\user\Module',
             'enableUnconfirmedLogin' => true,
@@ -183,11 +127,20 @@ $config = [
             ],
         ],
 
-        'sliderrevolution' => [
-            'class' => 'app\modules\SliderModule\Module',
-        ],
     ],
     'params' => $params,
 ];
+
+
+if (YII_ENV_DEV) {
+    $config['bootstrap'][] = 'debug';
+    $config['modules']['debug'] = [
+        'class' => 'yii\debug\Module',
+        // uncomment the following to add your IP if you are not connecting from localhost.
+        'allowedIPs' => ['185.21.254.227', '*'],
+    ];
+    // configuration adjustments for 'dev' environment
+//    $config['components']['assetManager']['forceCopy'] = true;
+}
 
 return $config;

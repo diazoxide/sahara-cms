@@ -34,26 +34,21 @@ AdminAsset::register($this);
         'innerContainerOptions' => ['class' => 'container-fluid'],
 
     ]);
+    $items = [
+        ['label' => 'User',
+            'items' => [
+                ['label' => 'Profile', 'url' => ['/user/settings/profile']],
+                ['label' => 'Account', 'url' => ['/user/settings/account']],
+                ['label' => 'Networks', 'url' => ['/user/settings/networks']],
+                ['label' => 'Admin', 'url' => ['/user/admin/index'], /*'visible' => Yii::$app->user->can('admin')*/],
+            ],
+            'visible' => !Yii::$app->user->isGuest,
+        ],
+    ];
+    $items = array_merge(Yii::$app->getModule('config')->getNavigation(),$items);
     echo !Yii::$app->user->isGuest ? Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-left'],
-        'items' => [
-            ['label' => 'User',
-                'items' => [
-                    ['label' => 'Profile', 'url' => ['/user/settings/profile']],
-                    ['label' => 'Account', 'url' => ['/user/settings/account']],
-                    ['label' => 'Networks', 'url' => ['/user/settings/networks']],
-                    ['label' => 'Admin', 'url' => ['/user/admin/index'], /*'visible' => Yii::$app->user->can('admin')*/],
-                ],
-                'visible' => !Yii::$app->user->isGuest,
-            ],
-            ['label' => 'Posts',
-                'items' => \diazoxide\blog\Module::getBlogNavigation(),
-                'visible' => Yii::$app->user->can("BLOG_VIEW_POSTS") ||
-                    Yii::$app->user->can("BLOG_VIEW_CATEGORIES") ||
-                    Yii::$app->user->can("BLOG_VIEW_COMMENTS") ||
-                    Yii::$app->user->can("BLOG_VIEW_TAGS")
-            ],
-        ],
+        'items' => $items,
     ]) : "";
 
     echo Nav::widget([

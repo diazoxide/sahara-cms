@@ -1,5 +1,4 @@
 <?php
-
 /* @var $this \yii\web\View */
 
 /* @var $content string */
@@ -32,12 +31,9 @@ AppAsset::register($this);
                     'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                 ]) ?>
             </div>
-
             <?= Alert::widget() ?>
 
-
             <?= $content ?>
-
 
         </div>
     </div>

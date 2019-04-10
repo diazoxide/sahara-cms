@@ -53,39 +53,7 @@ class SiteController extends Controller
         }
         Yii::$app->response->redirect($post->url);
     }
-    /**
-     * Login action.
-     *
-     * @return Response|string
-     */
-    public function actionLogin()
-    {
-        if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
 
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        }
-
-        $model->password = '';
-        return $this->render('login', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Logout action.
-     *
-     * @return Response
-     */
-    public function actionLogout()
-    {
-        Yii::$app->user->logout();
-
-        return $this->goHome();
-    }
 
     /**
      * Displays contact page.
@@ -114,11 +82,7 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
-
-    public function actionTest(){
-        echo Yii::$app->controller->route;
-    }
-
+    /*
 //    https://new.irakanum.am/site/localize-images?n=0&l=100
     public function actionLocalizeImages($n, $l)
     {
@@ -230,7 +194,7 @@ class SiteController extends Controller
                 echo $post->id . "<br>";
             }
         }
-    }
+    }*/
 
     public function actionClearCache()
     {

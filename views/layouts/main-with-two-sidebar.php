@@ -17,6 +17,7 @@ AppAsset::register($this);
 <?= $this->render("main-header") ?>
 
 <body>
+
 <?php $this->beginBody() ?>
 
 <div class="wrap">

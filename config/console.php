@@ -20,7 +20,7 @@ $config = [
         'log' => [
             'targets' => [
                 [
-                    'class' => 'yii\log\FileTarget',
+                    'class' => yii\log\DbTarget::class,
                     'levels' => ['error', 'warning'],
                 ],
             ],
@@ -29,13 +29,10 @@ $config = [
     ],
     'modules' => [
         'blog' => [
-            'class' => "akiraz2\blog\Module",
-            'urlManager' => 'urlManager',// 'urlManager' by default, or maybe you can use own component urlManagerFrontend
-            'imgFilePath' => '@frontend/web/img/blog/',
-            'imgFileUrl' => '/img/blog/',
-            //'userModel' => \common\models\User::class,
-            'userPK' => 'id', //default primary key for {{%user}} table
-            'userName' => 'username', //uses in view (may be field `username` or `email` or `login`)
+            'class' => \diazoxide\blog\Module::class,
+        ],
+        'config' => [
+            'class' => \diazoxide\yii2config\Module::class,
         ],
         'user' => [
             'class' => 'dektrium\user\Module',
