@@ -3,7 +3,7 @@
 use yii\db\Schema;
 use yii\db\Migration;
 
-class m190410_122345_config_modules_optionsDataInsert extends Migration
+class m190411_101011_config_modules_optionsDataInsert extends Migration
 {
 
     public function init()
@@ -446,18 +446,6 @@ class m190410_122345_config_modules_optionsDataInsert extends Migration
         'is_object' => '0',
         'parent_id' => null,
         'sort' => '10300',
-        'created_at' => '0',
-        'updated_at' => '0',
-    ],
-    [
-        'id' => '553',
-        'module_id' => '30',
-        'app_id' => null,
-        'name' => 'useApcu',
-        'value' => '',
-        'is_object' => '0',
-        'parent_id' => null,
-        'sort' => '10400',
         'created_at' => '0',
         'updated_at' => '0',
     ],

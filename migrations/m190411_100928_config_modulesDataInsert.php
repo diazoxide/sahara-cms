@@ -3,7 +3,7 @@
 use yii\db\Schema;
 use yii\db\Migration;
 
-class m190410_122309_config_modulesDataInsert extends Migration
+class m190411_100928_config_modulesDataInsert extends Migration
 {
 
     public function init()
@@ -28,7 +28,7 @@ class m190410_122309_config_modulesDataInsert extends Migration
         'status' => '1',
         'priority' => '5',
         'created_at' => '0',
-        'updated_at' => '1554896665',
+        'updated_at' => '1554977337',
     ],
     [
         'id' => '29',
