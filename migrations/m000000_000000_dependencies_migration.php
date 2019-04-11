@@ -7,7 +7,7 @@
  */
 use yii\db\Migration;
 
-class m170528_050554_blog_migration extends Migration
+class m000000_000000_dependencies_migration extends Migration
 {
     /**
      * @return bool|void
@@ -17,7 +17,9 @@ class m170528_050554_blog_migration extends Migration
     public function up()
     {
         Yii::$app->runAction('migrate', ['migrationPath' => '@vendor/diazoxide/yii2-blog/migrations']);
-
+        Yii::$app->runAction('migrate', ['migrationPath' => '@vendor/diazoxide/yii2-config/migrations']);
+        Yii::$app->runAction('migrate', ['migrationPath' => '@yii/rbac/migrations']);
+        Yii::$app->runAction('migrate', ['migrationPath' => '@vendor/dektrium/yii2-user/migrations']);
     }
 
     public function down()
