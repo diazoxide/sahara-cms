@@ -83,14 +83,14 @@ $config = [
         ],
         'db' => $db,
 
-        'urlManager' => [
-            "class" => yii\web\UrlManager::class,
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'hostInfo' => 'https://norlur.am',
-            'rules' => [
-            ],
-        ],
+//        'urlManager' => [
+//            "class" => yii\web\UrlManager::class,
+//            'enablePrettyUrl' => true,
+//            'showScriptName' => false,
+//            'hostInfo' => 'https://norlur.am',
+//            'rules' => [
+//            ],
+//        ],
 
 //        'formatter' => [
 //            'class' => 'yii\i18n\Formatter',
