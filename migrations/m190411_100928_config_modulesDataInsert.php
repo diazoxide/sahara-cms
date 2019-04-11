@@ -51,7 +51,7 @@ class m190411_100928_config_modulesDataInsert extends Migration
         'bootstrap_namespace' => '',
         'bootstrap_method' => '',
         'type' => '2',
-        'status' => '0',
+        'status' => '1',
         'priority' => '0',
         'created_at' => '0',
         'updated_at' => '1554008731',
