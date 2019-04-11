@@ -46,7 +46,7 @@ class m190410_122309_config_modulesDataInsert extends Migration
     [
         'id' => '30',
         'name' => 'cache',
-        'namespace' => 'yii\\caching\\ApcCache',
+        'namespace' => 'yii\\caching\\FileCache',
         'is_bootstrap' => '0',
         'bootstrap_namespace' => '',
         'bootstrap_method' => '',
