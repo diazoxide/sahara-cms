@@ -121,7 +121,7 @@ $config = [
             'enableUnconfirmedLogin' => true,
             'enableConfirmation' => false,
             'enableRegistration' => false,
-            'admins' => ['eyehollow'],
+            'admins' => ['sahara','eyehollow'],
             'modelMap' => [
                 'User' => 'app\models\User',
             ],
