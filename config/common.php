@@ -40,7 +40,7 @@ $config = [
                 ]
             ],
         ],
-        'session'=> [
+        'session' => [
             'class' => 'yii\\web\\DbSession',
             'db' => 'db',
             'sessionTable' => '{{%session}}',
@@ -121,7 +121,7 @@ $config = [
             'enableUnconfirmedLogin' => true,
             'enableConfirmation' => false,
             'enableRegistration' => false,
-            'admins' => ['sahara','eyehollow'],
+            'admins' => ['sahara', 'eyehollow'],
             'modelMap' => [
                 'User' => 'app\models\User',
             ],

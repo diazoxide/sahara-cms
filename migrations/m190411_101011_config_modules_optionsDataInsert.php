@@ -1294,7 +1294,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
         'module_id' => '43',
         'app_id' => '',
         'name' => 'description',
-        'value' => 'Հայկական լրատվության անկողմնակալ հարթակ։ Քաղաքական և անցուդարձային լուրեր, վերլուծություններ և մեկնաբանություններ․',
+        'value' => 'sahara_cms basic and fast cms based on yii2 framework.',
         'is_object' => '0',
         'parent_id' => null,
         'sort' => '14300',
