@@ -26,7 +26,7 @@ AdminAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => '<img height="25" src="' . Yii::$app->params['logo_white'] . '">',
+        'brandLabel' => '<img height="25" src="' . Yii::$app->website->getLogo('xs') . '">',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
