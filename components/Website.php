@@ -8,22 +8,71 @@
 
 namespace app\components;
 
-
+use Yii;
 use yii\base\Component;
+use yii\web\View;
 
 class Website extends Component
 {
 
+    /*
+     * Website name or title
+     * */
     public $name;
+
+    /*
+     * Primary description field
+     * */
     public $description;
+
+    /*
+     * Website main logo array
+     * */
     public $logo;
+
+    /*
+     * Additional space for keeping values
+     */
     public $data = [];
 
+
+    /*
+     * Dynamic options
+     * For Template component
+     * */
+    public $template_options = [];
 
     public function init()
     {
 
     }
+
+    /**
+     * @param View $view
+     */
+    public function registerJs($view)
+    {
+        if (isset($this->data['custom_js'])) {
+            $view->registerJs($this->data['custom_js']);
+        }
+    }
+
+    /**
+     * @param View $view
+     */
+    public function registerCss($view)
+    {
+        if (isset($this->data['custom_css'])) {
+            $view->registerCss($this->data['custom_css']);
+        }
+    }
+
+    public function register()
+    {
+        $this->registerCss(Yii::$app->view);
+        $this->registerJs(Yii::$app->view);
+    }
+
 
     public function getLogo($type = null)
     {
@@ -46,4 +95,14 @@ class Website extends Component
             return null;
         }
     }
+
+    /**
+     * @return string
+     * @throws \Exception
+     */
+    public function getTemplate()
+    {
+        return Yii::createObject(Template::class, $this->template_options);
+    }
+
 }
