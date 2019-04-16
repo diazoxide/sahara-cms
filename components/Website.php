@@ -67,6 +67,9 @@ class Website extends Component
         }
     }
 
+    /*
+     * Registering custom css
+     * and js to view */
     public function register()
     {
         $this->registerCss(Yii::$app->view);
@@ -97,12 +100,11 @@ class Website extends Component
     }
 
     /**
-     * @return string
-     * @throws \Exception
+     * @return Template
      */
     public function getTemplate()
     {
-        return Yii::createObject(Template::class, $this->template_options);
+        return new Template($this->template_options);
     }
 
 }

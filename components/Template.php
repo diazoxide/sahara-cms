@@ -29,6 +29,7 @@ class Template extends Component
      */
     public function getTopNavigationBar()
     {
+//        return TopNavigationBar::widget($this->top_navigation_bar_options);
         return TopNavigationBar::widget($this->top_navigation_bar_options);
     }
 
