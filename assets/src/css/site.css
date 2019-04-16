@@ -2,7 +2,7 @@ html,
 body {
     height: 100%;
     background: #eee;
-    font-family: "GHEAGrapalat";
+    font-family: "GHEAGrapalat", serif;
 }
 
 @media (min-width: 1500px) {
@@ -11,25 +11,21 @@ body {
     }
 }
 
-/* width */
 ::-webkit-scrollbar {
     width: 8px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
     visibility: hidden;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: #0000002b;
     border-radius: 2px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #2b5aa8;
 }
@@ -96,7 +92,7 @@ a.asc:after, a.desc:after {
     position: relative;
     top: 1px;
     display: inline-block;
-    font-family: 'Glyphicons Halflings';
+    font-family: 'Glyphicons Halflings', serif;
     font-style: normal;
     font-weight: normal;
     line-height: 1;
@@ -182,52 +178,14 @@ a.desc:after {
     padding: 0 !important;
 }
 
-#header_second {
-    margin-top: 0;
-    margin-bottom: 0;
-    font-size: 14px;
-    background: #cccccc;
-    border-bottom:solid 1px #ddd;
+.widget_title a {
+    color: #c7a871;
 }
 
-#header_top {
-    margin: 0;
-    background: #2b5aa8;
-}
-
-#header_top .navbar-right {
-    font-size: 12px;
-}
-
-#header_top .navbar-left a {
-    color: #f8f8f8;
-}
-
-#header_top .navbar-right a {
-    color: #cccccc;
-}
-
-#header_top .navbar-left {
-    font-size: 18px;
-}
-
-#header_top a {
-    color: #c8c8c8;
-}
-
-#header_top.navbar {
-    min-height: 40px !important;
-}
-
-#header_top .navbar-nav > li a {
-    padding: 10px;
-}
-.widget_title a{
-    color:#c7a871;
-}
-.widget_title a:hover{
+.widget_title a:hover {
     color: #87704a;
 }
+
 .widget_title {
     background: #444444;
     color: #ffffff;
@@ -236,11 +194,6 @@ a.desc:after {
     font-size: 14px;
     text-align: center;
     overflow: hidden;
-}
-
-
-#logo-container {
-    padding: 0;
 }
 
 #logo {
@@ -255,10 +208,6 @@ a.desc:after {
 
 .pagination > li > a, .pagination > li > span {
     color: #444;
-}
-
-.home-videos-content > div:last-child a {
-    color: #b0b0b0;
 }
 
 .navbar-default {
