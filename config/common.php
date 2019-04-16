@@ -27,6 +27,15 @@ $config = [
             'database' => 0,
         ],
 
+        'urlManager' => [
+            "class" => yii\web\UrlManager::class,
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+//            'hostInfo' => '',
+            'rules' => [
+            ],
+        ],
+
         'i18n' => [
             'translations' => [
                 'yii' => [
