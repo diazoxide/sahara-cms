@@ -15,6 +15,7 @@
         gtag('js', new Date());
         gtag('config', '<?= Yii::$app->params['google_analytics_id']?>');
     </script>
-
     <?php $this->head() ?>
+    <?php Yii::$app->website->register();?>
+
 </head>
