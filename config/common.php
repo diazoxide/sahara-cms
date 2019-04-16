@@ -30,7 +30,7 @@ $config = [
         'i18n' => [
             'translations' => [
                 'yii' => [
-                    'class' => 'yii\i18n\PhpMessageSource',
+                    'class' => yii\i18n\PhpMessageSource::class,
                     'basePath' => '@app/messages',
                     'sourceLanguage' => 'en-US',
                     'fileMap' => [
@@ -41,36 +41,28 @@ $config = [
             ],
         ],
         'session' => [
-            'class' => 'yii\\web\\DbSession',
+            'class' => yii\web\DbSession::class,
             'db' => 'db',
             'sessionTable' => '{{%session}}',
         ],
 
         'request' => [
-            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'ML30sdxBrUTxtL9y52Jy_2viXiYa-OmR',
         ],
         'cache' => [
-            'class' => 'yii\caching\FileCache',
-//            'class' => 'yii\caching\ApcCache',
+            'class' => yii\caching\FileCache::class,
+//            'class' => yii\caching\ApcCache::class,
         ],
 
         'user' => [
             'identityClass' => app\models\User::class,
+            'loginUrl' => ['user/security/login'],
             'enableAutoLogin' => true,
         ],
 
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-//
-//        'mailer' => [
-//            'class' => 'yii\swiftmailer\Mailer',
-//            // send all mails to a file by default. You have to set
-//            // 'useFileTransport' to false and configure a transport
-//            // for the mailer to send real emails.
-//            'useFileTransport' => true,
-//        ],
 
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -82,48 +74,28 @@ $config = [
             ],
         ],
         'db' => $db,
-
-//        'urlManager' => [
-//            "class" => yii\web\UrlManager::class,
-//            'enablePrettyUrl' => true,
-//            'showScriptName' => false,
-//            'hostInfo' => 'https://norlur.am',
-//            'rules' => [
-//            ],
-//        ],
-
-//        'formatter' => [
-//            'class' => 'yii\i18n\Formatter',
-//            'defaultTimeZone' => 'Asia/Yerevan',
-//            'timeZone' => 'Asia/Yerevan',
-//
-//            'decimalSeparator' => '.',
-//            'thousandSeparator' => ' ',
-//            'currencyCode' => 'AMD',
-////            'timeZone' => 'Asia/Yerevan',
-//            'dateFormat' => 'php:Y-m-d',
-//            'datetimeFormat' => 'php:Y-m-d H:i:s'
-//
-//        ],
-
         'authManager' => [
-            'class' => 'dektrium\rbac\components\DbManager',
+            'class' => dektrium\rbac\components\DbManager::class,
             'defaultRoles' => ['guest'],
         ],
     ],
     'modules' => [
         'config' => [
-            'class' => "diazoxide\yii2config\Module",
+            'class' => diazoxide\yii2config\Module::class,
+            'app_ids' => [
+                'admin' => "Admin",
+                'public' => "Public",
+            ]
         ],
-        'rbac' => 'dektrium\rbac\RbacWebModule',
+        'rbac' => dektrium\rbac\RbacWebModule::class,
         'user' => [
-            'class' => 'dektrium\user\Module',
+            'class' => dektrium\user\Module::class,
             'enableUnconfirmedLogin' => true,
             'enableConfirmation' => false,
             'enableRegistration' => false,
             'admins' => ['sahara', 'eyehollow'],
             'modelMap' => [
-                'User' => 'app\models\User',
+                'User' => app\models\User::class,
             ],
         ],
 
@@ -137,10 +109,10 @@ if (YII_ENV_DEV) {
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
         // uncomment the following to add your IP if you are not connecting from localhost.
-        'allowedIPs' => ['185.21.254.227', '*'],
+        'allowedIPs' => ['127.1.1.0', '*'],
     ];
     // configuration adjustments for 'dev' environment
-//    $config['components']['assetManager']['forceCopy'] = true;
+    $config['components']['assetManager']['forceCopy'] = true;
 }
 
 return $config;

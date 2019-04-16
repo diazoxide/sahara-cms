@@ -33,6 +33,10 @@ $config = [
         ],
         'config' => [
             'class' => \diazoxide\yii2config\Module::class,
+            'app_ids' => [
+                'admin' => "Admin",
+                'public' => "Public",
+            ]
         ],
         'user' => [
             'class' => 'dektrium\user\Module',
