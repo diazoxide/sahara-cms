@@ -1,3 +1,17 @@
-RewriteEngine on
-RewriteCond %{REQUEST_URI} !public/
-RewriteRule (.*) /public/$1 [L]
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+
+  #RewriteCond %{REQUEST_URI} !^public
+  RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# Deny accessing below extensions
+<Files ~ "(.json|.lock|.git|.md|.bat)">
+Order allow,deny
+Deny from all
+</Files>
+
+# Deny accessing dot files
+RewriteRule (^\.|/\.) - [F]

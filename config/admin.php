@@ -3,11 +3,9 @@ $config = require __DIR__ . '/common.php';
 
 $config['id']='admin';
 $config['modules']['config']['controllerNamespace'] = 'diazoxide\yii2config\controllers\backend';
-//
-//$config['modules']['blog']['controllerNamespace'] = 'diazoxide\blog\controllers\backend';
 
 $config['components']['request']['baseUrl'] ='/admin';
-$config['components']['urlManager']['scriptUrl'] ='/admin/index.php';
+$config['components']['urlManager']['baseUrl'] ='/admin';
 
 $config['layout']="admin";
 $config['defaultRoute']='/blog';
