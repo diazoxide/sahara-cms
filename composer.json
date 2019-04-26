@@ -59,16 +59,15 @@
       "setPermission": [
         {
           "runtime": "0777",
+          "web/assets": "0777",
           "public/uploads": "0777",
-          "public/assets": "0777",
-          "admin/assets": "0777",
           "yii": "0755"
         }
       ]
     },
     "yii\\composer\\Installer::postInstall": {
       "generateCookieValidationKey": [
-        "config/web.php"
+        "config/common.php"
       ]
     }
   },
