@@ -21,14 +21,6 @@ $this->title = $title;
                 </div>
             </div>
 
-
-            <div class="row top-buffer-20-xs">
-                <a href="https://www.facebook.com/libraryyerevan/" target="_blank">
-                    <img style="width: 100%" src="https://norlur.am/uploads/img/banners/library.gif" title="Library Yerevan">
-                </a>
-            </div>
-
-
             <div class="top-buffer-20-xs home-white-content row">
                 <?php
                 foreach ($featuredCategories->where(['widget_type_id' => 1, 'is_featured' => true])->limit(3)->all() as $category): ?>

@@ -414,18 +414,6 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'updated_at' => '0',
                 ],
                 [
-                    'id' => '490',
-                    'module_id' => '26',
-                    'app_id' => 'public',
-                    'name' => 'blog/default/index',
-                    'value' => '@app/views/blog/index',
-                    'is_object' => '0',
-                    'parent_id' => '455',
-                    'sort' => '0',
-                    'created_at' => '0',
-                    'updated_at' => '0',
-                ],
-                [
                     'id' => '551',
                     'module_id' => '29',
                     'app_id' => null,
