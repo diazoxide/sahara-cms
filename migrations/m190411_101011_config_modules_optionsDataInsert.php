@@ -1,6 +1,5 @@
 <?php
 
-
 use yii\db\Migration;
 
 class m190411_101011_config_modules_optionsDataInsert extends Migration
@@ -15,7 +14,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
     public function safeUp()
     {
         $this->batchInsert('{{%config_modules_options}}',
-            ["id", "module_id", "app_id", "name", "value", "is_object", "parent_id", "sort", "created_at", "updated_at"],
+            ["id", "module_id", "app_id", "name", "value", "is_object", "type_id", "parent_id", "sort", "created_at", "updated_at"],
             [
                 [
                     'id' => '1',
@@ -24,6 +23,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'controllerNamespace',
                     'value' => 'diazoxide\\blog\\controllers\\backend',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '8000',
                     'created_at' => '0',
@@ -36,6 +36,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'controllerNamespace',
                     'value' => 'diazoxide\\blog\\controllers\\frontend',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '4600',
                     'created_at' => '0',
@@ -48,6 +49,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'backendViewPath',
                     'value' => '@vendor/diazoxide/yii2-blog/views/backend',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '4700',
                     'created_at' => '0',
@@ -60,6 +62,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'frontendViewPath',
                     'value' => '@vendor/diazoxide/yii2-blog/views/frontend',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '4800',
                     'created_at' => '0',
@@ -72,6 +75,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'frontendViewsMap',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '4900',
                     'created_at' => '0',
@@ -84,6 +88,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'frontendLayoutMap',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '5000',
                     'created_at' => '0',
@@ -96,6 +101,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'frontendTitleMap',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '5100',
                     'created_at' => '0',
@@ -108,6 +114,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'urlManager',
                     'value' => 'urlManager',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '5200',
                     'created_at' => '0',
@@ -120,6 +127,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'imgFilePath',
                     'value' => '@public/uploads/img/blog',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '5300',
                     'created_at' => '0',
@@ -132,6 +140,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'imgFileUrl',
                     'value' => '/uploads/img/blog',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '5400',
                     'created_at' => '0',
@@ -144,6 +153,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'adminAccessControl',
                     'value' => '',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '5500',
                     'created_at' => '0',
@@ -156,6 +166,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'blogPostPageCount',
                     'value' => '10',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '5600',
                     'created_at' => '0',
@@ -168,6 +179,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'blogCommentPageCount',
                     'value' => '20',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '5700',
                     'created_at' => '0',
@@ -180,6 +192,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'enableComments',
                     'value' => '1',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '5800',
                     'created_at' => '0',
@@ -192,6 +205,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'enableBooks',
                     'value' => '1',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '5900',
                     'created_at' => '0',
@@ -204,6 +218,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'enableLocalComments',
                     'value' => '',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '6000',
                     'created_at' => '0',
@@ -216,6 +231,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'enableFacebookComments',
                     'value' => '1',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '6100',
                     'created_at' => '0',
@@ -228,6 +244,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'showBannerInPost',
                     'value' => '',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '6200',
                     'created_at' => '0',
@@ -240,6 +257,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'showClicksInPost',
                     'value' => '0',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '6300',
                     'created_at' => '0',
@@ -252,6 +270,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'showClicksInArchive',
                     'value' => '',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '6400',
                     'created_at' => '0',
@@ -264,6 +283,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'showDateInPost',
                     'value' => '1',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '6500',
                     'created_at' => '0',
@@ -276,6 +296,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'dateTypeInPost',
                     'value' => 'dateTime',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '6600',
                     'created_at' => '0',
@@ -288,6 +309,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'schemaOrg',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '6800',
                     'created_at' => '0',
@@ -300,6 +322,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'enableShareButtons',
                     'value' => '1',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '7000',
                     'created_at' => '0',
@@ -312,6 +335,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'redactorModule',
                     'value' => 'redactorBlog',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '7100',
                     'created_at' => '0',
@@ -324,6 +348,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'userModel',
                     'value' => '',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '7200',
                     'created_at' => '0',
@@ -336,6 +361,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'userPK',
                     'value' => 'id',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '7300',
                     'created_at' => '0',
@@ -348,6 +374,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'userName',
                     'value' => 'username',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '7400',
                     'created_at' => '0',
@@ -360,6 +387,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'blogTheme',
                     'value' => '',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '7500',
                     'created_at' => '0',
@@ -372,6 +400,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'homeTitle',
                     'value' => 'sahara_cms',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '7600',
                     'created_at' => '0',
@@ -384,6 +413,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'htmlClass',
                     'value' => 'diazoxide_blog',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '7800',
                     'created_at' => '0',
@@ -396,6 +426,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'blog/default/view',
                     'value' => '@app/views/layouts/main-with-two-sidebar',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '456',
                     'sort' => '0',
                     'created_at' => '0',
@@ -408,6 +439,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'blog/default/archive',
                     'value' => '@app/views/layouts/main-with-right-sidebar',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '456',
                     'sort' => '-100',
                     'created_at' => '0',
@@ -420,6 +452,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'db',
                     'value' => 'db',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '10200',
                     'created_at' => '0',
@@ -432,6 +465,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'sessionTable',
                     'value' => '{{%session}}',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '10300',
                     'created_at' => '0',
@@ -444,6 +478,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'timeZone',
                     'value' => 'Asia/Yerevan',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '11900',
                     'created_at' => '0',
@@ -456,6 +491,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'defaultTimeZone',
                     'value' => 'Asia/Yerevan',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '12000',
                     'created_at' => '0',
@@ -468,6 +504,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'dateFormat',
                     'value' => 'php:Y-m-d',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '12100',
                     'created_at' => '0',
@@ -480,6 +517,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'timeFormat',
                     'value' => 'php:H:i:s',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '12200',
                     'created_at' => '0',
@@ -492,6 +530,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'datetimeFormat',
                     'value' => 'php:Y-m-d H:i:s',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '12300',
                     'created_at' => '0',
@@ -504,6 +543,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'decimalSeparator',
                     'value' => '',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '12500',
                     'created_at' => '0',
@@ -516,6 +556,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'thousandSeparator',
                     'value' => '',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '12600',
                     'created_at' => '0',
@@ -526,8 +567,9 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '26',
                     'app_id' => '',
                     'name' => 'homeDescription',
-                    'value' => 'Հայկական լրատվության անկողմնակալ հարթակ։ Քաղաքական և անցուդարձային լուրեր, վերլուծություններ և մեկնաբանություններ․',
+                    'value' => 'sahara_cms powerful PHP cms based on Yii2 framework.',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '12700',
                     'created_at' => '1554284188',
@@ -538,8 +580,9 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '26',
                     'app_id' => '',
                     'name' => 'homeKeywords',
-                    'value' => 'Հայկական լրատվություն քաղաքական իրավական սկանդալային շտապ պատահարներ',
+                    'value' => 'sahara_cms powerful PHP cms based on Yii2 framework.',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '12800',
                     'created_at' => '1554284250',
@@ -552,6 +595,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'publisher',
                     'value' => '',
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => '474',
                     'sort' => '0',
                     'created_at' => '1554485947',
@@ -564,6 +608,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'logo',
                     'value' => '/uploads/img/logo/sahara.png',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '655',
                     'sort' => '0',
                     'created_at' => '1554485998',
@@ -576,6 +621,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'logoWidth',
                     'value' => '200',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '655',
                     'sort' => '-100',
                     'created_at' => '1554486053',
@@ -588,6 +634,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'logoHeight',
                     'value' => '43',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '655',
                     'sort' => '-200',
                     'created_at' => '1554486074',
@@ -600,6 +647,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'name',
                     'value' => 'sahara_cms',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '655',
                     'sort' => '-300',
                     'created_at' => '1554486096',
@@ -612,6 +660,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'phone',
                     'value' => '+374 (93) 022-045',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '655',
                     'sort' => '-400',
                     'created_at' => '1554486123',
@@ -624,6 +673,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'address',
                     'value' => '89/45 Admiral Isakov Ave, Yerevan 0004',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '655',
                     'sort' => '-500',
                     'created_at' => '1554486162',
@@ -636,6 +686,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'useFileTransport',
                     'value' => '1',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '13500',
                     'created_at' => '1554706424',
@@ -648,6 +699,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'social',
                     'value' => '',
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '13600',
                     'created_at' => '1554709417',
@@ -660,6 +712,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'facebook',
                     'value' => '',
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => '688',
                     'sort' => '0',
                     'created_at' => '1554709431',
@@ -672,6 +725,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'app_id',
                     'value' => '440598006382886',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '689',
                     'sort' => '0',
                     'created_at' => '1554709449',
@@ -684,6 +738,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'addthis',
                     'value' => '',
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => '688',
                     'sort' => '-100',
                     'created_at' => '1554710588',
@@ -696,6 +751,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'pubid',
                     'value' => 'ra-5ab0c5361efd854c',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '691',
                     'sort' => '0',
                     'created_at' => '1554710600',
@@ -708,6 +764,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'options',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '13700',
                     'created_at' => '1554725071',
@@ -720,6 +777,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'class',
                     'value' => 'navbar-nav navbar-left hidden-xs',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '708',
                     'sort' => '0',
                     'created_at' => '1554725071',
@@ -732,6 +790,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'id',
                     'value' => 'header_top_social',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '708',
                     'sort' => '-100',
                     'created_at' => '1554725071',
@@ -744,6 +803,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'networks',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '13800',
                     'created_at' => '1554725071',
@@ -756,6 +816,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'facebook',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => '711',
                     'sort' => '0',
                     'created_at' => '1554725071',
@@ -768,6 +829,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'url',
                     'value' => 'https://www.facebook.com/sahara.cms/',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '712',
                     'sort' => '0',
                     'created_at' => '1554725071',
@@ -780,6 +842,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'icon',
                     'value' => 'fa fa-facebook-official',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '712',
                     'sort' => '-100',
                     'created_at' => '1554725071',
@@ -792,6 +855,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'instagram',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => '711',
                     'sort' => '-100',
                     'created_at' => '1554725071',
@@ -804,6 +868,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'url',
                     'value' => '#',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '715',
                     'sort' => '0',
                     'created_at' => '1554725071',
@@ -816,6 +881,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'icon',
                     'value' => 'fa fa-instagram',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '715',
                     'sort' => '-100',
                     'created_at' => '1554725071',
@@ -828,6 +894,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'twitter',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => '711',
                     'sort' => '-200',
                     'created_at' => '1554725071',
@@ -840,6 +907,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'url',
                     'value' => '#',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '718',
                     'sort' => '0',
                     'created_at' => '1554725071',
@@ -852,6 +920,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'icon',
                     'value' => 'fa fa-twitter-square',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '718',
                     'sort' => '-100',
                     'created_at' => '1554725071',
@@ -864,6 +933,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'youtube',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => '711',
                     'sort' => '-300',
                     'created_at' => '1554725071',
@@ -876,6 +946,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'url',
                     'value' => '#',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '721',
                     'sort' => '0',
                     'created_at' => '1554725071',
@@ -888,6 +959,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'icon',
                     'value' => 'fa fa-youtube-square',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '721',
                     'sort' => '-100',
                     'created_at' => '1554725071',
@@ -900,6 +972,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'skype',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => '711',
                     'sort' => '-400',
                     'created_at' => '1554725071',
@@ -912,6 +985,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'url',
                     'value' => '#',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '724',
                     'sort' => '0',
                     'created_at' => '1554725071',
@@ -924,6 +998,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'icon',
                     'value' => 'fa fa-skype',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '724',
                     'sort' => '-100',
                     'created_at' => '1554725071',
@@ -936,6 +1011,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'icons',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '13900',
                     'created_at' => '1554725071',
@@ -948,6 +1024,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'facebook',
                     'value' => 'fa fa-facebook-official',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '727',
                     'sort' => '0',
                     'created_at' => '1554725071',
@@ -960,6 +1037,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'instagram',
                     'value' => 'fa fa-instagram',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '727',
                     'sort' => '-100',
                     'created_at' => '1554725071',
@@ -972,6 +1050,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'youtube',
                     'value' => 'fa fa-youtube-square',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '727',
                     'sort' => '-200',
                     'created_at' => '1554725071',
@@ -984,6 +1063,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'twitter',
                     'value' => 'fa fa-twitter-square',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '727',
                     'sort' => '-300',
                     'created_at' => '1554725071',
@@ -996,6 +1076,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'skype',
                     'value' => 'fa fa-skype',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '727',
                     'sort' => '-400',
                     'created_at' => '1554725071',
@@ -1008,6 +1089,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'options',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '14000',
                     'created_at' => '1554726517',
@@ -1020,6 +1102,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'info',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '14100',
                     'created_at' => '1554726517',
@@ -1032,6 +1115,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'Mobile',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => '753',
                     'sort' => '0',
                     'created_at' => '1554726517',
@@ -1044,6 +1128,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'icon',
                     'value' => 'fa fa-mobile',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '754',
                     'sort' => '0',
                     'created_at' => '1554726517',
@@ -1056,6 +1141,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'value',
                     'value' => '+374 (93) 022-045',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '754',
                     'sort' => '-100',
                     'created_at' => '1554726517',
@@ -1068,6 +1154,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'Telephone',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => '753',
                     'sort' => '-100',
                     'created_at' => '1554726517',
@@ -1080,6 +1167,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'icon',
                     'value' => 'fa  fa-phone-square',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '757',
                     'sort' => '0',
                     'created_at' => '1554726518',
@@ -1092,6 +1180,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'value',
                     'value' => '+374 (43) 022-055',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '757',
                     'sort' => '-100',
                     'created_at' => '1554726518',
@@ -1104,6 +1193,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'Address',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => '753',
                     'sort' => '-200',
                     'created_at' => '1554726518',
@@ -1116,6 +1206,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'icon',
                     'value' => 'fa fa-map-marker',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '760',
                     'sort' => '0',
                     'created_at' => '1554726518',
@@ -1126,8 +1217,9 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '42',
                     'app_id' => '',
                     'name' => 'value',
-                    'value' => 'ք.Երևան, ՀԱԹ, Բ-2, 89/45',
+                    'value' => 'Artak str. 13/12',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '760',
                     'sort' => '-100',
                     'created_at' => '1554726518',
@@ -1140,6 +1232,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'City',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => '753',
                     'sort' => '-300',
                     'created_at' => '1554726518',
@@ -1152,6 +1245,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'icon',
                     'value' => 'fa fa-map-o',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '763',
                     'sort' => '0',
                     'created_at' => '1554726518',
@@ -1162,8 +1256,9 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '42',
                     'app_id' => '',
                     'name' => 'value',
-                    'value' => 'Երևան',
+                    'value' => 'Ashtarak',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '763',
                     'sort' => '-100',
                     'created_at' => '1554726518',
@@ -1176,6 +1271,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'Country',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => '753',
                     'sort' => '-400',
                     'created_at' => '1554726518',
@@ -1188,6 +1284,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'icon',
                     'value' => 'fa fa-map-o',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '766',
                     'sort' => '0',
                     'created_at' => '1554726518',
@@ -1198,8 +1295,9 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '42',
                     'app_id' => '',
                     'name' => 'value',
-                    'value' => 'Հայաստան',
+                    'value' => 'Armenia',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '766',
                     'sort' => '-100',
                     'created_at' => '1554726518',
@@ -1212,6 +1310,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'name',
                     'value' => 'sahara_cms',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '14200',
                     'created_at' => '1554802015',
@@ -1224,6 +1323,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'description',
                     'value' => 'sahara_cms basic and fast cms based on yii2 framework.',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '14300',
                     'created_at' => '1554802015',
@@ -1236,6 +1336,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'logo',
                     'value' => '',
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '14400',
                     'created_at' => '1554802015',
@@ -1248,6 +1349,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'data',
                     'value' => null,
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => null,
                     'sort' => '14500',
                     'created_at' => '1554802015',
@@ -1260,6 +1362,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'md',
                     'value' => '/uploads/img/logo/sahara.png',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '771',
                     'sort' => '0',
                     'created_at' => '1554802130',
@@ -1272,6 +1375,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'xs',
                     'value' => '/uploads/img/logo/sahara_white.png',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '771',
                     'sort' => '-100',
                     'created_at' => '1554802201',
@@ -1284,6 +1388,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'footer',
                     'value' => '/uploads/img/logo/sahara_white.png',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '771',
                     'sort' => '-200',
                     'created_at' => '1554803133',
@@ -1296,6 +1401,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'powered',
                     'value' => 'Aaron Yordanyan',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '772',
                     'sort' => '0',
                     'created_at' => '1554803395',
@@ -1306,8 +1412,9 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '43',
                     'app_id' => '',
                     'name' => 'footer_description',
-                    'value' => 'Հայկական լրատվության անկողմնակալ հարթակ։ Քաղաքական և անցուդարձային լուրեր, վերլուծություններ և մեկնաբանություններ․',
+                    'value' => 'sahara_cms powerful PHP cms based on Yii2 framework.',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '772',
                     'sort' => '-100',
                     'created_at' => '1554803464',
@@ -1320,6 +1427,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'appId',
                     'value' => '2092223964326783',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '712',
                     'sort' => '-200',
                     'created_at' => '1554813552',
@@ -1332,6 +1440,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'page_plugin_options',
                     'value' => '',
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => '712',
                     'sort' => '-300',
                     'created_at' => '1554813582',
@@ -1344,6 +1453,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'language',
                     'value' => 'hy_AM',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '779',
                     'sort' => '0',
                     'created_at' => '1554813597',
@@ -1356,6 +1466,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'data',
                     'value' => '',
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => '779',
                     'sort' => '-100',
                     'created_at' => '1554813619',
@@ -1368,6 +1479,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'small-header',
                     'value' => 'false',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '781',
                     'sort' => '0',
                     'created_at' => '1554813632',
@@ -1380,6 +1492,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'adapt-container-width',
                     'value' => 'true',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '781',
                     'sort' => '-100',
                     'created_at' => '1554813654',
@@ -1392,6 +1505,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'hide-cover',
                     'value' => 'false',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '781',
                     'sort' => '-200',
                     'created_at' => '1554813671',
@@ -1404,6 +1518,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'show-facepile',
                     'value' => 'true',
                     'is_object' => '0',
+                    'type_id' => null,
                     'parent_id' => '781',
                     'sort' => '-300',
                     'created_at' => '1554813694',
@@ -1416,10 +1531,303 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'name' => 'ads',
                     'value' => '',
                     'is_object' => '1',
+                    'type_id' => null,
                     'parent_id' => '772',
                     'sort' => '-200',
                     'created_at' => '1554828051',
                     'updated_at' => '1554828051',
+                ],
+                [
+                    'id' => '787',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'frontendLayoutPatterns',
+                    'value' => '',
+                    'is_object' => '1',
+                    'type_id' => null,
+                    'parent_id' => null,
+                    'sort' => '14600',
+                    'created_at' => '1558772107',
+                    'updated_at' => '1558772107',
+                ],
+                [
+                    'id' => '788',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'blog/default/index',
+                    'value' => '[@app/views/layouts/main-navbar][navigation]
+
+<div class="container">[$content]</div>
+
+[@app/views/layouts/main-footer]',
+                    'is_object' => '0',
+                    'type_id' => '7',
+                    'parent_id' => '787',
+                    'sort' => '0',
+                    'created_at' => '1558772140',
+                    'updated_at' => '1558772148',
+                ],
+                [
+                    'id' => '789',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'blog/default/view',
+                    'value' => '[@app/views/layouts/main-navbar][navigation]
+
+<div class="container">[$content]</div>
+
+[@app/views/layouts/main-footer]',
+                    'is_object' => '0',
+                    'type_id' => '7',
+                    'parent_id' => '787',
+                    'sort' => '-100',
+                    'created_at' => '1558772650',
+                    'updated_at' => '1558772676',
+                ],
+                [
+                    'id' => '790',
+                    'module_id' => '43',
+                    'app_id' => '',
+                    'name' => 'custom_css',
+                    'value' => 'html,
+body {
+    height: 100%;
+    background: #eee;
+    font-family: "GHEAGrapalat", serif;
+}
+
+@media (min-width: 1500px) {
+    .container {
+        width: 1400px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+    visibility: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0000002b;
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2b5aa8;
+}
+
+a {
+    color: #00173c;
+}
+
+a:hover {
+    color: #333;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 10px 15px 20px;
+}
+
+.footer {
+    background-color: #2d2d2d;
+    padding-top: 20px;
+    font-size: 13px;
+    border-top: solid 50px #5f5f5f;
+    color: #ababab;
+}
+
+.footer .container {
+    padding-bottom: 50px;
+    padding-top: 20px;
+    border-bottom: solid 1px #555;
+
+}
+
+.footer h4 {
+    margin-bottom: 30px;
+}
+
+.footer a {
+    color: #828282
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: \'Glyphicons Halflings\', serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\\e113"*/ "\\e151";
+}
+
+a.desc:after {
+    content: /*"\\e114"*/ "\\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #2b5aa8;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav li > form > button.logout {
+    padding: 15px;
+    border: none;
+}
+
+@media (max-width: 767px) {
+    .nav li > form > button.logout {
+        display: block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+    text-decoration: none;
+}
+
+.nav > li > form > button.logout:focus {
+    outline: none;
+}
+
+.nopadding {
+    padding: 0 !important;
+}
+
+.nomargin {
+    margin: 0 !important;
+}
+
+.nospaces {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.widget_title a {
+    color: #c7a871;
+}
+
+.widget_title a:hover {
+    color: #87704a;
+}
+
+.widget_title {
+    background: #444444;
+    color: #ffffff;
+    border-bottom: solid 5px #000000;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+}
+
+#logo {
+    display: inline-block;
+    padding: 15px 0;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    background: #2b5aa8;
+    border-color: #fff;
+}
+
+.pagination > li > a, .pagination > li > span {
+    color: #444;
+}
+
+.navbar-default {
+    border: none;
+    border-radius: 0;
+}',
+                    'is_object' => '0',
+                    'type_id' => '5',
+                    'parent_id' => '772',
+                    'sort' => '-300',
+                    'created_at' => '1558773385',
+                    'updated_at' => '1558773391',
+                ],
+                [
+                    'id' => '791',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'blog/default/archive',
+                    'value' => '[@app/views/layouts/main-navbar][navigation]
+
+<div class="container">[$content]</div>
+
+[@app/views/layouts/main-footer]',
+                    'is_object' => '0',
+                    'type_id' => '7',
+                    'parent_id' => '787',
+                    'sort' => '-200',
+                    'created_at' => '1558773720',
+                    'updated_at' => '1558773757',
                 ],
             ]
         );
