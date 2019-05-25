@@ -1,6 +1,6 @@
 <?php
 
-use yii\db\Schema;
+
 use yii\db\Migration;
 
 class m190411_101011_config_modules_optionsDataInsert extends Migration

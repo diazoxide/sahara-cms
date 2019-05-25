@@ -4,7 +4,7 @@ return [
     'dsn' => 'mysql:host=localhost;dbname=MY_DB_NAME',
     'username' => 'MY_DB_USERNAME',
     'password' => 'MY_DB_PASSWORD',
-    'charset' => 'utf8',
+    'charset' => 'utf8mb4',
 
     // Schema cache options (for production environment)
     'enableSchemaCache' => true,

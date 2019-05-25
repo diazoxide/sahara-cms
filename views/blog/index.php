@@ -93,7 +93,7 @@ $this->title = $title;
         <div class="col-md-4 col-md-pull-8 nospaces-xs">
 
             <div class="home-feed nopadding-xs" id="home-feed-container">
-                <div id="home_feed" class="top-buffer-20-xs top-buffer-0-md">
+                <div id="home_feed" class="top-buffer-20-xs top-buffer-0-md" style="height: 100vh;">
                     <?= Feed::widget([
                         'title' => '<i class="fa fa-newspaper-o"></i> ' . \diazoxide\blog\Module::t(null,'Feed'),
                         'items_count' => 15,
@@ -116,6 +116,7 @@ $this->title = $title;
                         'item_image_container_options' => ['class' => 'col-xs-2 left-padding-0-xs right-padding-10-xs'],
                         'item_content_container_options' => ['class' => 'col-xs-10 nospaces-xs'],
                         'item_options' => ['tag' => 'article', 'class' => 'item col-xs-12 top-buffer-10-xs left-padding-0-xs right-padding-10-xs'],
+                        'list_options'=>['style'=>'overflow-y: scroll; max-height: 100vh;','test'=>'test'],
                     ]);
                     ?>
                 </div>
