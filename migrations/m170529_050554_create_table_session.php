@@ -12,7 +12,7 @@ class m170529_050554_create_table_session extends Migration
 {
     public function up()
     {
-        $tableOptions = 'CHARACTER SET utf8 COLLATE utf8mb4_unicode_ci ENGINE=InnoDB';
+        $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
 
         $this->createTable('{{%session}}', [
             'id' => $this->char(64)->notNull(),
