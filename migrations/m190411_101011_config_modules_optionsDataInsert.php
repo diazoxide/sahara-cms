@@ -14,7 +14,19 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
     public function safeUp()
     {
         $this->batchInsert('{{%config_modules_options}}',
-            ["id", "module_id", "app_id", "name", "value", "is_object", "type_id", "parent_id", "sort", "created_at", "updated_at"],
+            [
+                "id",
+                "module_id",
+                "app_id",
+                "name",
+                "value",
+                "is_object",
+                "type_id",
+                "parent_id",
+                "sort",
+                "created_at",
+                "updated_at"
+            ],
             [
                 [
                     'id' => '1',
@@ -567,7 +579,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '26',
                     'app_id' => '',
                     'name' => 'homeDescription',
-                    'value' => 'sahara_cms powerful PHP cms based on Yii2 framework.',
+                    'value' => 'Հայկական լրատվության անկողմնակալ հարթակ։ Քաղաքական և անցուդարձային լուրեր, վերլուծություններ և մեկնաբանություններ․',
                     'is_object' => '0',
                     'type_id' => null,
                     'parent_id' => null,
@@ -580,7 +592,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '26',
                     'app_id' => '',
                     'name' => 'homeKeywords',
-                    'value' => 'sahara_cms powerful PHP cms based on Yii2 framework.',
+                    'value' => 'Հայկական լրատվություն քաղաքական իրավական սկանդալային շտապ պատահարներ',
                     'is_object' => '0',
                     'type_id' => null,
                     'parent_id' => null,
@@ -1217,7 +1229,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '42',
                     'app_id' => '',
                     'name' => 'value',
-                    'value' => 'Artak str. 13/12',
+                    'value' => 'ք.Երևան, ՀԱԹ, Բ-2, 89/45',
                     'is_object' => '0',
                     'type_id' => null,
                     'parent_id' => '760',
@@ -1256,7 +1268,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '42',
                     'app_id' => '',
                     'name' => 'value',
-                    'value' => 'Ashtarak',
+                    'value' => 'Երևան',
                     'is_object' => '0',
                     'type_id' => null,
                     'parent_id' => '763',
@@ -1295,7 +1307,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '42',
                     'app_id' => '',
                     'name' => 'value',
-                    'value' => 'Armenia',
+                    'value' => 'Հայաստան',
                     'is_object' => '0',
                     'type_id' => null,
                     'parent_id' => '766',
@@ -1412,7 +1424,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '43',
                     'app_id' => '',
                     'name' => 'footer_description',
-                    'value' => 'sahara_cms powerful PHP cms based on Yii2 framework.',
+                    'value' => 'Հայկական լրատվության անկողմնակալ հարթակ։ Քաղաքական և անցուդարձային լուրեր, վերլուծություններ և մեկնաբանություններ․',
                     'is_object' => '0',
                     'type_id' => null,
                     'parent_id' => '772',
@@ -1556,9 +1568,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'app_id' => '',
                     'name' => 'blog/default/index',
                     'value' => '[@app/views/layouts/main-navbar][navigation]
-
 <div class="container">[$content]</div>
-
 [@app/views/layouts/main-footer]',
                     'is_object' => '0',
                     'type_id' => '7',
@@ -1573,23 +1583,26 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'app_id' => '',
                     'name' => 'blog/default/view',
                     'value' => '[@app/views/layouts/main-navbar][navigation]
-
-<div class="container">[$content]</div>
-
+<div class="container">
+    [```return yii\\widgets\\Breadcrumbs::widget([\'links\' => isset(Yii::$app->view->params[\'breadcrumbs\']) ? Yii::$app->view->params[\'breadcrumbs\'] : [],]);```]
+    [$content]
+</div>
 [@app/views/layouts/main-footer]',
                     'is_object' => '0',
                     'type_id' => '7',
                     'parent_id' => '787',
                     'sort' => '-100',
                     'created_at' => '1558772650',
-                    'updated_at' => '1558772676',
+                    'updated_at' => '1558806646',
                 ],
                 [
                     'id' => '790',
                     'module_id' => '43',
                     'app_id' => '',
                     'name' => 'custom_css',
-                    'value' => 'html,
+                    'value' => '/* sahara_cms - Custom Css :) */
+
+html,
 body {
     height: 100%;
     background: #eee;
@@ -1633,7 +1646,6 @@ a:hover {
     min-height: 100%;
     height: auto;
     margin: 0 auto;
-    padding: 0 0 60px;
 }
 
 .wrap > .container {
@@ -1810,7 +1822,7 @@ a.desc:after {
                     'parent_id' => '772',
                     'sort' => '-300',
                     'created_at' => '1558773385',
-                    'updated_at' => '1558773391',
+                    'updated_at' => '1558814432',
                 ],
                 [
                     'id' => '791',
@@ -1818,9 +1830,7 @@ a.desc:after {
                     'app_id' => '',
                     'name' => 'blog/default/archive',
                     'value' => '[@app/views/layouts/main-navbar][navigation]
-
 <div class="container">[$content]</div>
-
 [@app/views/layouts/main-footer]',
                     'is_object' => '0',
                     'type_id' => '7',
