@@ -4,21 +4,30 @@
 /* @var $content string */
 
 use app\widgets\Alert;
+use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+
+AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 
-<?= $this->render("main-header") ?>
+<head>
+    <meta charset="<?= Yii::$app->charset ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <?php $this->registerCsrfMetaTags() ?>
+    <title><?= Html::encode($this->title) ?></title>
+    <?php $this->head() ?>
+    <?php Yii::$app->website->register();?>
+</head>
 
 <body>
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-
-    <?= $this->render("main-navbar") ?>
 
     <div id="main-content" class="top-buffer-20-md">
 
@@ -37,8 +46,12 @@ use app\assets\AppAsset;
     </div>
 </div>
 
-<?= $this->render("main-footer") ?>
-
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left">&copy; <?= Yii::$app->website->name; ?> <?= date('Y') ?></p>
+        <p class="pull-right">Powered By <?= Yii::$app->website->getData('powered'); ?></p>
+    </div>
+</footer>
 
 <?php $this->endBody() ?>
 </body>
