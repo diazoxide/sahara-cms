@@ -82,7 +82,7 @@ AdminAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; <?= Yii::$app->params['site_title']; ?> <?= date('Y') ?></p>
+        <p class="pull-left">&copy; <?= Yii::$app->params['name']; ?> <?= date('Y') ?></p>
 
         <p class="pull-right">Powered By <?= Yii::$app->params['powered']; ?></p>
     </div>
