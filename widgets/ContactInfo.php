@@ -9,11 +9,12 @@
 namespace app\widgets;
 
 use yii\base\Component;
+use yii\base\Widget;
 use yii\bootstrap\Nav;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
-class ContactInfo extends Component
+class ContactInfo extends Widget
 {
 
     public $options = ['tag' => 'div', 'class' => 'ContactInfo'];
@@ -44,16 +45,21 @@ class ContactInfo extends Component
         ],
     ];
 
-    public function init()
+    /**
+     * Get widget
+     * @return string
+     */
+    public function getWidget()
     {
+        $html = "";
         $options = $this->options;
         $tag = ArrayHelper::remove($options, 'tag', 'div');
 
-        echo Html::beginTag($tag, $options);
+        $html .= Html::beginTag($tag, $options);
 
         $title_options = $this->title_options;
         $title_tag = ArrayHelper::remove($title_options, 'tag', 'h4');
-        echo Html::tag($title_tag, $this->title, $title_options);
+        $html .= Html::tag($title_tag, $this->title, $title_options);
 
         foreach ($this->info as $label => $row) {
 
@@ -63,11 +69,13 @@ class ContactInfo extends Component
             $row_options = $this->row_options;
             $row_tag = ArrayHelper::remove($row_options, 'tag', 'div');
 
-            echo Html::tag($row_tag, '<i class="' . $icon . '"></i> ' . $label . ' : ' . $value);
+            $html .= Html::tag($row_tag, '<i class="' . $icon . '"></i> ' . $label . ' : ' . $value);
 
         }
 
-        echo Html::endTag($tag);
+        $html .= Html::endTag($tag);
+
+        return $html;
     }
 
 }

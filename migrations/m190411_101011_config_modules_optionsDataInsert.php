@@ -1541,7 +1541,9 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '26',
                     'app_id' => '',
                     'name' => 'blog/default/index',
-                    'value' => '[@app/views/layouts/main-navbar][```return diazoxide\blog\widgets\Navigation::widget([ "options" => [ "id" => "header_second" ] ]);```]
+                    'value' => '[```return Yii::$app->website->template->topNavigationBar;```]
+[```return Yii::$app->website->template->brandingBar;```]
+[```return diazoxide\blog\widgets\Navigation::widget([ "options" => [ "id" => "header_second" ] ]);```]
 <div class="container">[$content]</div>
 [@app/views/layouts/main-footer]',
                     'is_object' => '0',
@@ -1556,7 +1558,9 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '26',
                     'app_id' => '',
                     'name' => 'blog/default/view',
-                    'value' => '[@app/views/layouts/main-navbar][```return diazoxide\blog\widgets\Navigation::widget([ "options" => [ "id" => "header_second" ] ]);```]
+                    'value' => '[```return Yii::$app->website->template->topNavigationBar;```]
+[```return Yii::$app->website->template->brandingBar;```]
+[```return diazoxide\blog\widgets\Navigation::widget([ "options" => [ "id" => "header_second" ] ]);```]
 <div class="container">
     [```return yii\\widgets\\Breadcrumbs::widget([\'links\' => isset(Yii::$app->view->params[\'breadcrumbs\']) ? Yii::$app->view->params[\'breadcrumbs\'] : [],]);```]
     [$content]
@@ -1803,7 +1807,9 @@ a.desc:after {
                     'module_id' => '26',
                     'app_id' => '',
                     'name' => 'blog/default/archive',
-                    'value' => '[@app/views/layouts/main-navbar][```return diazoxide\blog\widgets\Navigation::widget([ "options" => [ "id" => "header_second" ] ]);```]
+                    'value' => '[```return Yii::$app->website->template->topNavigationBar;```]
+[```return Yii::$app->website->template->brandingBar;```]
+[```return diazoxide\blog\widgets\Navigation::widget([ "options" => [ "id" => "header_second" ] ]);```]
 <div class="container">[$content]</div>
 [@app/views/layouts/main-footer]',
                     'is_object' => '0',

@@ -85,18 +85,21 @@ class SocialMedia extends Component
 
     public function getFacebookPagePlugin()
     {
-        echo Html::tag('div', null, ['id' => "fb-root"]);
+        $html = '';
+        $html .= Html::tag('div', null, ['id' => "fb-root"]);
+
         $app_id = $this->networks['facebook']['appId'];
         $url = $this->networks['facebook']['url'];
         $language = $this->networks['facebook']['page_plugin_options']['language'];
         $data = $this->networks['facebook']['page_plugin_options']['data'];
         $data['href'] = $url;
 
-        echo '<script async defer crossorigin="anonymous" src="https://connect.facebook.net/' . $language . '/sdk.js#xfbml=1&version=v3.2&appId=' . $app_id . '&autoLogAppEvents=1"></script>';
-        echo Html::tag('div', null, [
+        $html .= '<script async defer crossorigin="anonymous" src="https://connect.facebook.net/' . $language . '/sdk.js#xfbml=1&version=v3.2&appId=' . $app_id . '&autoLogAppEvents=1"></script>';
+        $html .= Html::tag('div', null, [
             'class' => 'fb-page',
             'data' => $data
         ]);
+        return $html;
 //        echo '<div class="fb-page" data-href="https://www.facebook.com/norlur.analysis/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">';
     }
 }
