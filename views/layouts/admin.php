@@ -8,6 +8,7 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 
 AdminAsset::register($this);
+/** @var string $content */
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -35,7 +36,8 @@ AdminAsset::register($this);
 
     ]);
     $items = [
-        ['label' => 'User',
+        [
+            'label' => 'User',
             'items' => [
                 ['label' => 'Profile', 'url' => ['/user/settings/profile']],
                 ['label' => 'Account', 'url' => ['/user/settings/account']],
@@ -45,7 +47,7 @@ AdminAsset::register($this);
             'visible' => !Yii::$app->user->isGuest,
         ],
     ];
-    $items = array_merge(Yii::$app->getModule('config')->getNavigation(),$items);
+    $items = array_merge(Yii::$app->getModule('config')->getNavigation(), $items);
     echo !Yii::$app->user->isGuest ? Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-left'],
         'items' => $items,
@@ -56,7 +58,8 @@ AdminAsset::register($this);
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             ['label' => 'Sign in', 'url' => ['/user/security/login'], 'visible' => Yii::$app->user->isGuest],
-            ['label' => 'Sign out',
+            [
+                'label' => 'Sign out',
                 'url' => ['/user/security/logout'],
                 'linkOptions' => ['data-method' => 'post'],
                 'visible' => !Yii::$app->user->isGuest

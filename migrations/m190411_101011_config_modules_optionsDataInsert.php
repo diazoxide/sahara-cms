@@ -432,6 +432,32 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'updated_at' => '0',
                 ],
                 [
+                    'id' => '488',
+                    'module_id' => '26',
+                    'app_id' => 'public',
+                    'name' => 'blog/default/view',
+                    'value' => '@app/views/layouts/main-with-two-sidebar',
+                    'is_object' => '0',
+                    'type_id' => null,
+                    'parent_id' => '456',
+                    'sort' => '0',
+                    'created_at' => '0',
+                    'updated_at' => '0',
+                ],
+                [
+                    'id' => '489',
+                    'module_id' => '26',
+                    'app_id' => 'public',
+                    'name' => 'blog/default/archive',
+                    'value' => '@app/views/layouts/main-with-right-sidebar',
+                    'is_object' => '0',
+                    'type_id' => null,
+                    'parent_id' => '456',
+                    'sort' => '-100',
+                    'created_at' => '0',
+                    'updated_at' => '0',
+                ],
+                [
                     'id' => '551',
                     'module_id' => '29',
                     'app_id' => null,
@@ -1541,26 +1567,27 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '26',
                     'app_id' => '',
                     'name' => 'blog/default/index',
-                    'value' => '[```return Yii::$app->website->template->topNavigationBar;```]
-[```return Yii::$app->website->template->brandingBar;```]
-[```return diazoxide\blog\widgets\Navigation::widget([ "options" => [ "id" => "header_second" ] ]);```]
+                    'value' => '[@app/views/layouts/main-navbar]
+
+[```return diazoxide\\blog\\widgets\\Navigation::widget([ \'options\' => [ \'id\' => \'header_second\' ] ]);```]
+
 <div class="container">[$content]</div>
+
 [@app/views/layouts/main-footer]',
                     'is_object' => '0',
                     'type_id' => '7',
                     'parent_id' => '787',
                     'sort' => '0',
                     'created_at' => '1558772140',
-                    'updated_at' => '1558772148',
+                    'updated_at' => '1558864219',
                 ],
                 [
                     'id' => '789',
                     'module_id' => '26',
                     'app_id' => '',
                     'name' => 'blog/default/view',
-                    'value' => '[```return Yii::$app->website->template->topNavigationBar;```]
-[```return Yii::$app->website->template->brandingBar;```]
-[```return diazoxide\blog\widgets\Navigation::widget([ "options" => [ "id" => "header_second" ] ]);```]
+                    'value' => '[@app/views/layouts/main-navbar]
+[```return diazoxide\\blog\\widgets\\Navigation::widget([ \'options\' => [ \'id\' => \'header_second\' ] ]);```]
 <div class="container">
     [```return yii\\widgets\\Breadcrumbs::widget([\'links\' => isset(Yii::$app->view->params[\'breadcrumbs\']) ? Yii::$app->view->params[\'breadcrumbs\'] : [],]);```]
     [$content]
@@ -1571,7 +1598,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'parent_id' => '787',
                     'sort' => '-100',
                     'created_at' => '1558772650',
-                    'updated_at' => '1558806646',
+                    'updated_at' => '1558864236',
                 ],
                 [
                     'id' => '790',
@@ -1809,15 +1836,41 @@ a.desc:after {
                     'name' => 'blog/default/archive',
                     'value' => '[```return Yii::$app->website->template->topNavigationBar;```]
 [```return Yii::$app->website->template->brandingBar;```]
-[```return diazoxide\blog\widgets\Navigation::widget([ "options" => [ "id" => "header_second" ] ]);```]
-<div class="container">[$content]</div>
-[@app/views/layouts/main-footer]',
+[```return diazoxide\\blog\\widgets\\Navigation::widget([ \'options\' => [ \'id\' => \'header_second\' ] ]);```]
+<div class="container">
+    [$content]
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="col-md-3">
+            <div id="fb_like_box">
+                <h4>Facebook</h4>
+                [```return Yii::$app->socialmedia->getFacebookPagePlugin();```]
+            </div>
+        </div>
+        <div class="col-md-3 hidden-xs">
+            <h4>Categories</h4>
+            [```return diazoxide\\blog\\widgets\\Navigation::widget([ \'vertical\' => true, \'options\' => [ \'id\' => \'footer_categories\' ] ]);```]
+        </div>
+        <div class="col-md-3">
+            [```return Yii::$app->contactInfo->getWidget();```]
+        </div>
+        <div class="col-md-3">
+            [```return \\yii\\helpers\\Html::img(Yii::$app->website->getLogo(\'footer\'));```]
+            <p class="top-buffer-20">[```return Yii::$app->website->getData(\'footer_description\');```]</p>
+        </div>
+    </div>
+    <div class="container">
+        <p class="pull-left">&copy; [```return Yii::$app->website->name.\' \'. date(\'Y\');```]</p>
+        <p class="pull-right">Powered By [```return Yii::$app->website->getData(\'powered\');```]</p>
+    </div>
+</footer>',
                     'is_object' => '0',
                     'type_id' => '7',
                     'parent_id' => '787',
                     'sort' => '-200',
                     'created_at' => '1558773720',
-                    'updated_at' => '1558773757',
+                    'updated_at' => '1558900735',
                 ],
             ]
         );
