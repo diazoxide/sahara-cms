@@ -1545,7 +1545,6 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
 [```return Yii::$app->website->template->brandingBar;```]
 [```return diazoxide\\blog\\widgets\\Navigation::widget([ \'options\' => [ \'id\' => \'header_second\' ] ]);```]
 <div class="container">[$content]</div>
-[@app/views/layouts/main-footer]
 <footer class="footer">
     <div class="container">
         <div class="col-md-3">
