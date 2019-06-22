@@ -49,6 +49,7 @@ AdminAsset::register($this);
     ];
     $items = array_merge(Yii::$app->getModule('config')->getNavigation(), $items);
     echo !Yii::$app->user->isGuest ? Nav::widget([
+        'encodeLabels' => false,
         'options' => ['class' => 'navbar-nav navbar-left'],
         'items' => $items,
     ]) : "";

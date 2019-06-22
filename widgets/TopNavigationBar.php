@@ -50,8 +50,9 @@ class TopNavigationBar extends Widget
         NavBar::begin([
             'brandImage' => Yii::$app->website->getLogo('xs'),
             'brandOptions' => [
-                'class' => 'visible-xs'
+                'class' => 'visible-xs',
             ],
+            'brandUrl' => '/',
             'innerContainerOptions' => ['class' => 'container nopadding-sm'],
             'containerOptions' => ['class' => 'nopadding-sm'],
 
