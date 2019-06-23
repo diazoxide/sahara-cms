@@ -1352,20 +1352,20 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'parent_id' => '771',
                     'sort' => '0',
                     'created_at' => '1554802130',
-                    'updated_at' => '1554802176',
+                    'updated_at' => '1559974155',
                 ],
                 [
                     'id' => '774',
                     'module_id' => '43',
                     'app_id' => '',
                     'name' => 'xs',
-                    'value' => '/uploads/img/logo/sahara_white.png',
+                    'value' => 'https://res.cloudinary.com/inoit-ltd/image/upload/c_scale,w_87/v1557319566/armday/logo_dzjkov.png',
                     'is_object' => '0',
                     'type_id' => null,
                     'parent_id' => '771',
                     'sort' => '-100',
                     'created_at' => '1554802201',
-                    'updated_at' => '1554802201',
+                    'updated_at' => '1559974193',
                 ],
                 [
                     'id' => '775',
@@ -1626,229 +1626,245 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '43',
                     'app_id' => '',
                     'name' => 'custom_css',
-                    'value' => '/* sahara_cms - Custom Css :) */
+                    'value' => '/* sahara_cms - Custom Css :) */ 
 
-html,
-body {
-    height: 100%;
-    background: #eee;
-    font-family: "GHEAGrapalat", serif;
-}
+html, 
+body { 
+    height: 100%; 
+    background: #eee; 
+    font-family: "GHEAGrapalat", serif; 
+} 
 
-@media (min-width: 1500px) {
-    .container {
-        width: 1400px;
-    }
-}
+@media (min-width: 1500px) { 
+    .container { 
+        width: 1400px; 
+    } 
+} 
 
-::-webkit-scrollbar {
-    width: 8px;
-}
+::-webkit-scrollbar { 
+    width: 8px; 
+} 
 
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
-    visibility: hidden;
-}
+::-webkit-scrollbar-track { 
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px; 
+    visibility: hidden; 
+} 
 
-::-webkit-scrollbar-thumb {
-    background: #0000002b;
-    border-radius: 2px;
-}
+::-webkit-scrollbar-thumb { 
+    background: #0000002b; 
+    border-radius: 2px; 
+} 
 
-::-webkit-scrollbar-thumb:hover {
-    background: #2b5aa8;
-}
+::-webkit-scrollbar-thumb:hover { 
+    background: #2b5aa8; 
+} 
 
-a {
-    color: #00173c;
-}
+a { 
+    color: #00173c; 
+} 
 
-a:hover {
-    color: #333;
-}
+a:hover { 
+    color: #333; 
+} 
 
-.wrap {
-    min-height: 100%;
-    height: auto;
-    margin: 0 auto;
-}
+.wrap { 
+    min-height: 100%; 
+    height: auto; 
+    margin: 0 auto; 
+} 
 
-.wrap > .container {
-    padding: 10px 15px 20px;
-}
+.wrap > .container { 
+    padding: 10px 15px 20px; 
+} 
 
-.footer {
-    background-color: #2d2d2d;
-    padding-top: 20px;
-    font-size: 13px;
-    border-top: solid 50px #5f5f5f;
-    color: #ababab;
-}
+.footer { 
+    background-color: #2d2d2d; 
+    margin-top: 40px; 
+    font-size: 13px; 
+    border-top: solid 5px#5f5f5f; 
+    color: #ababab; 
+} 
 
-.footer .container {
-    padding-bottom: 50px;
-    padding-top: 20px;
-    border-bottom: solid 1px #555;
+.footer .container { 
+    padding-bottom: 50px; 
+    padding-top: 20px; 
+    border-bottom: solid 1px #555; 
 
-}
+} 
 
-.footer h4 {
-    margin-bottom: 30px;
-}
+.footer h4 { 
+    margin-bottom: 30px; 
+} 
 
-.footer a {
-    color: #828282
-}
+.footer a { 
+    color: #828282 
+} 
 
-.jumbotron {
-    text-align: center;
-    background-color: transparent;
-}
+.jumbotron { 
+    text-align: center; 
+    background-color: transparent; 
+} 
 
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-}
+.jumbotron .btn { 
+    font-size: 21px; 
+    padding: 14px 24px; 
+} 
 
-.not-set {
-    color: #c55;
-    font-style: italic;
-}
+.not-set { 
+    color: #c55; 
+    font-style: italic; 
+} 
 
-/* add sorting icons to gridview sort links */
-a.asc:after, a.desc:after {
-    position: relative;
-    top: 1px;
-    display: inline-block;
-    font-family: \'Glyphicons Halflings\', serif;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    padding-left: 5px;
-}
+/* add sorting icons to gridview sort links */ 
+a.asc:after, a.desc:after { 
+    position: relative; 
+    top: 1px; 
+    display: inline-block; 
+    font-family: \'Glyphicons Halflings\', serif; 
+    font-style: normal; 
+    font-weight: normal; 
+    line-height: 1; 
+    padding-left: 5px; 
+} 
 
-a.asc:after {
-    content: /*"\\e113"*/ "\\e151";
-}
+a.asc:after { 
+    content: /*"\\e113"*/ "\\e151"; 
+} 
 
-a.desc:after {
-    content: /*"\\e114"*/ "\\e152";
-}
+a.desc:after { 
+    content: /*"\\e114"*/ "\\e152"; 
+} 
 
-.sort-numerical a.asc:after {
-    content: "\\e153";
-}
+.sort-numerical a.asc:after { 
+    content: "\\e153"; 
+} 
 
-.sort-numerical a.desc:after {
-    content: "\\e154";
-}
+.sort-numerical a.desc:after { 
+    content: "\\e154"; 
+} 
 
-.sort-ordinal a.asc:after {
-    content: "\\e155";
-}
+.sort-ordinal a.asc:after { 
+    content: "\\e155"; 
+} 
 
-.sort-ordinal a.desc:after {
-    content: "\\e156";
-}
+.sort-ordinal a.desc:after { 
+    content: "\\e156"; 
+} 
 
-.grid-view th {
-    white-space: nowrap;
-}
+.grid-view th { 
+    white-space: nowrap; 
+} 
 
-.hint-block {
-    display: block;
-    margin-top: 5px;
-    color: #999;
-}
+.hint-block { 
+    display: block; 
+    margin-top: 5px; 
+    color: #999; 
+} 
 
-.error-summary {
-    color: #2b5aa8;
-    background: #fdf7f7;
-    border-left: 3px solid #eed3d7;
-    padding: 10px 20px;
-    margin: 0 0 15px 0;
-}
+.error-summary { 
+    color: #2b5aa8; 
+    background: #fdf7f7; 
+    border-left: 3px solid #eed3d7; 
+    padding: 10px 20px; 
+    margin: 0 0 15px 0; 
+} 
 
-/* align the logout "link" (button in form) of the navbar */
-.nav li > form > button.logout {
-    padding: 15px;
-    border: none;
-}
+/* align the logout "link" (button in form) of the navbar */ 
+.nav li > form > button.logout { 
+    padding: 15px; 
+    border: none; 
+} 
 
-@media (max-width: 767px) {
-    .nav li > form > button.logout {
-        display: block;
-        text-align: left;
-        width: 100%;
-        padding: 10px 15px;
-    }
-}
+@media (max-width: 767px) { 
+    .nav li > form > button.logout { 
+        display: block; 
+        text-align: left; 
+        width: 100%; 
+        padding: 10px 15px; 
+    } 
+} 
 
-.nav > li > form > button.logout:focus,
-.nav > li > form > button.logout:hover {
-    text-decoration: none;
-}
+.nav > li > form > button.logout:focus, 
+.nav > li > form > button.logout:hover { 
+    text-decoration: none; 
+} 
 
-.nav > li > form > button.logout:focus {
-    outline: none;
-}
+.nav > li > form > button.logout:focus { 
+    outline: none; 
+} 
 
-.nopadding {
-    padding: 0 !important;
-}
+.nopadding { 
+    padding: 0 !important; 
+} 
 
-.nomargin {
-    margin: 0 !important;
-}
+.nomargin { 
+    margin: 0 !important; 
+} 
 
-.nospaces {
-    margin: 0 !important;
-    padding: 0 !important;
-}
+.nospaces { 
+    margin: 0 !important; 
+    padding: 0 !important; 
+} 
 
-.widget_title a {
-    color: #c7a871;
-}
+.widget_title a { 
+    color: #c7a871; 
+} 
 
-.widget_title a:hover {
-    color: #87704a;
-}
+.widget_title a:hover { 
+    color: #87704a; 
+} 
 
-.widget_title {
-    background: #444444;
-    color: #ffffff;
-    border-bottom: solid 5px #000000;
-    padding: 10px;
-    font-size: 14px;
-    text-align: center;
-    overflow: hidden;
-}
+.widget_title { 
+    background: #ffecca; 
+    color: #616161; 
+    padding: 10px; 
+    font-size: 17px; 
+    text-align: center; 
+    overflow: hidden; 
+} 
 
-#logo {
-    display: inline-block;
-    padding: 15px 0;
-}
+#header_second { 
+    background: #009ada; 
+    box-shadow:0px 10px 10px #c7c7c7 
+} 
+#header_second a { 
+    color:#fff 
+} 
+#header_second .navbar-toggle .icon-bar{ 
+    background-color:#fff; 
+} 
+
+#logo { 
+    display: inline-block; 
+    padding: 15px 0; 
+} 
 
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
-    background: #2b5aa8;
-    border-color: #fff;
-}
+    background: #2b5aa8; 
+    border-color: #fff; 
+} 
 
-.pagination > li > a, .pagination > li > span {
-    color: #444;
-}
+.pagination > li > a, .pagination > li > span { 
+    color: #444; 
+} 
 
-.navbar-default {
-    border: none;
-    border-radius: 0;
+.navbar-default { 
+    border: none; 
+    border-radius: 0; 
+} 
+
+/*Blog*/ 
+#blog-article-single-container .body img, 
+#blog-article-single-container .body iframe { 
+    max-width: 100%; 
 }',
                     'is_object' => '0',
                     'type_id' => '5',
                     'parent_id' => '772',
                     'sort' => '-300',
                     'created_at' => '1558773385',
-                    'updated_at' => '1558814432',
+                    'updated_at' => '1560698728',
                 ],
                 [
                     'id' => '791',
@@ -1936,6 +1952,318 @@ a.desc:after {
                     'sort' => '-300',
                     'created_at' => '1558903044',
                     'updated_at' => '1558903051',
+                ],
+                [
+                    'id' => '793',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'thumbnailsSizes',
+                    'value' => '',
+                    'is_object' => '1',
+                    'type_id' => null,
+                    'parent_id' => null,
+                    'sort' => '14700',
+                    'created_at' => '1560618200',
+                    'updated_at' => '1560618200',
+                ],
+                [
+                    'id' => '794',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'xsthumb',
+                    'value' => '',
+                    'is_object' => '1',
+                    'type_id' => null,
+                    'parent_id' => '793',
+                    'sort' => '0',
+                    'created_at' => '1560618221',
+                    'updated_at' => '1560618221',
+                ],
+                [
+                    'id' => '795',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'width',
+                    'value' => '64',
+                    'is_object' => '0',
+                    'type_id' => '2',
+                    'parent_id' => '794',
+                    'sort' => '0',
+                    'created_at' => '1560696289',
+                    'updated_at' => '1560696289',
+                ],
+                [
+                    'id' => '796',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'height',
+                    'value' => '48',
+                    'is_object' => '0',
+                    'type_id' => '2',
+                    'parent_id' => '794',
+                    'sort' => '-100',
+                    'created_at' => '1560696312',
+                    'updated_at' => '1560696312',
+                ],
+                [
+                    'id' => '797',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'sthumb',
+                    'value' => '',
+                    'is_object' => '1',
+                    'type_id' => null,
+                    'parent_id' => '793',
+                    'sort' => '-100',
+                    'created_at' => '1560696333',
+                    'updated_at' => '1560696333',
+                ],
+                [
+                    'id' => '798',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'width',
+                    'value' => '128',
+                    'is_object' => '0',
+                    'type_id' => '2',
+                    'parent_id' => '797',
+                    'sort' => '0',
+                    'created_at' => '1560696359',
+                    'updated_at' => '1560696359',
+                ],
+                [
+                    'id' => '799',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'height',
+                    'value' => '86',
+                    'is_object' => '0',
+                    'type_id' => '2',
+                    'parent_id' => '797',
+                    'sort' => '-100',
+                    'created_at' => '1560696385',
+                    'updated_at' => '1560696390',
+                ],
+                [
+                    'id' => '800',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'mthumb',
+                    'value' => '',
+                    'is_object' => '1',
+                    'type_id' => null,
+                    'parent_id' => '793',
+                    'sort' => '-200',
+                    'created_at' => '1560696425',
+                    'updated_at' => '1560696425',
+                ],
+                [
+                    'id' => '801',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'width',
+                    'value' => '240',
+                    'is_object' => '0',
+                    'type_id' => '2',
+                    'parent_id' => '800',
+                    'sort' => '0',
+                    'created_at' => '1560696439',
+                    'updated_at' => '1560696439',
+                ],
+                [
+                    'id' => '802',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'height',
+                    'value' => '200',
+                    'is_object' => '0',
+                    'type_id' => '2',
+                    'parent_id' => '800',
+                    'sort' => '-100',
+                    'created_at' => '1560696502',
+                    'updated_at' => '1560696502',
+                ],
+                [
+                    'id' => '803',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'nthumb',
+                    'value' => '',
+                    'is_object' => '1',
+                    'type_id' => null,
+                    'parent_id' => '793',
+                    'sort' => '-300',
+                    'created_at' => '1560696534',
+                    'updated_at' => '1560696534',
+                ],
+                [
+                    'id' => '804',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'width',
+                    'value' => '320',
+                    'is_object' => '0',
+                    'type_id' => '2',
+                    'parent_id' => '803',
+                    'sort' => '0',
+                    'created_at' => '1560696547',
+                    'updated_at' => '1560696547',
+                ],
+                [
+                    'id' => '805',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'height',
+                    'value' => '240',
+                    'is_object' => '0',
+                    'type_id' => '2',
+                    'parent_id' => '803',
+                    'sort' => '-100',
+                    'created_at' => '1560696576',
+                    'updated_at' => '1560696579',
+                ],
+                [
+                    'id' => '806',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'xthumb',
+                    'value' => '',
+                    'is_object' => '1',
+                    'type_id' => null,
+                    'parent_id' => '793',
+                    'sort' => '-400',
+                    'created_at' => '1560696611',
+                    'updated_at' => '1560696611',
+                ],
+                [
+                    'id' => '807',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'width',
+                    'value' => '480',
+                    'is_object' => '0',
+                    'type_id' => '2',
+                    'parent_id' => '806',
+                    'sort' => '0',
+                    'created_at' => '1560696653',
+                    'updated_at' => '1560696653',
+                ],
+                [
+                    'id' => '808',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'height',
+                    'value' => '320',
+                    'is_object' => '0',
+                    'type_id' => '2',
+                    'parent_id' => '806',
+                    'sort' => '-100',
+                    'created_at' => '1560696675',
+                    'updated_at' => '1560696675',
+                ],
+                [
+                    'id' => '809',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'thumb',
+                    'value' => '',
+                    'is_object' => '1',
+                    'type_id' => null,
+                    'parent_id' => '793',
+                    'sort' => '-500',
+                    'created_at' => '1560696703',
+                    'updated_at' => '1560696703',
+                ],
+                [
+                    'id' => '810',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'width',
+                    'value' => '320',
+                    'is_object' => '0',
+                    'type_id' => '2',
+                    'parent_id' => '809',
+                    'sort' => '0',
+                    'created_at' => '1560696742',
+                    'updated_at' => '1560696742',
+                ],
+                [
+                    'id' => '811',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'height',
+                    'value' => '240',
+                    'is_object' => '0',
+                    'type_id' => '2',
+                    'parent_id' => '809',
+                    'sort' => '-100',
+                    'created_at' => '1560696758',
+                    'updated_at' => '1560697479',
+                ],
+                [
+                    'id' => '812',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'facebook',
+                    'value' => '',
+                    'is_object' => '1',
+                    'type_id' => null,
+                    'parent_id' => '793',
+                    'sort' => '-600',
+                    'created_at' => '1560696780',
+                    'updated_at' => '1560696780',
+                ],
+                [
+                    'id' => '813',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'width',
+                    'value' => '600',
+                    'is_object' => '0',
+                    'type_id' => '2',
+                    'parent_id' => '812',
+                    'sort' => '0',
+                    'created_at' => '1560696802',
+                    'updated_at' => '1560696802',
+                ],
+                [
+                    'id' => '814',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'height',
+                    'value' => '315',
+                    'is_object' => '0',
+                    'type_id' => '2',
+                    'parent_id' => '812',
+                    'sort' => '-100',
+                    'created_at' => '1560696821',
+                    'updated_at' => '1560696821',
+                ],
+                [
+                    'id' => '815',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => 'assets',
+                    'value' => '',
+                    'is_object' => '1',
+                    'type_id' => null,
+                    'parent_id' => null,
+                    'sort' => '14800',
+                    'created_at' => '1561190002',
+                    'updated_at' => '1561190002',
+                ],
+                [
+                    'id' => '816',
+                    'module_id' => '26',
+                    'app_id' => '',
+                    'name' => '0',
+                    'value' => 'app\\assets\\FontsAsset',
+                    'is_object' => '0',
+                    'type_id' => '1',
+                    'parent_id' => '815',
+                    'sort' => '0',
+                    'created_at' => '1561190067',
+                    'updated_at' => '1561190071',
                 ],
             ]
         );
