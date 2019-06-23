@@ -1359,7 +1359,7 @@ class m190411_101011_config_modules_optionsDataInsert extends Migration
                     'module_id' => '43',
                     'app_id' => '',
                     'name' => 'xs',
-                    'value' => 'https://res.cloudinary.com/inoit-ltd/image/upload/c_scale,w_87/v1557319566/armday/logo_dzjkov.png',
+                    'value' => '/uploads/img/logo/sahara.png',
                     'is_object' => '0',
                     'type_id' => null,
                     'parent_id' => '771',
@@ -1834,6 +1834,9 @@ a.desc:after {
 #header_second .navbar-toggle .icon-bar{ 
     background-color:#fff; 
 } 
+#header_second li li a{
+    color:#3a3a3a;
+}
 
 #logo { 
     display: inline-block; 
